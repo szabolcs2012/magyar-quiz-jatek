@@ -74,8 +74,10 @@ const questions = [
 
     // TÖRTÉNELEM
     {
-        category: "tortenelem",
-        question: "Mikor volt a mohácsi csata?",
+        {
+    category: "tortenelem",
+    difficulty: "kozepes",
+    question: "Mikor volt a mohácsi csata?",
         answers: [
             "1456",
             "1526",
