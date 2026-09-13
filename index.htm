@@ -206,6 +206,69 @@
 
 
     <!-- =========================
+         LEVÉL / MEGJEGYZÉS
+         ========================= -->
+
+    <div id="letter-overlay" class="letter-overlay hidden">
+
+        <div class="envelope-container">
+
+            <div id="envelope" class="envelope">
+
+                <!-- Boríték hátulja -->
+                <div class="envelope-back"></div>
+
+
+                <!-- Levél -->
+                <div class="letter">
+
+                    <div class="letter-content">
+
+                        <h2>
+                            💌 Kedves Kvíz játékos!!!
+                        </h2>
+
+                        <p>
+                            Ha tetszik a játék vagy hasonló ötleteid vannak,
+                            akkor írd be a megjegyzésbe, és ha nem,
+                            akkor írd le, hogy mit kéne változtatni rajta!
+                        </p>
+
+                        <textarea
+                            id="player-comment"
+                            rows="10"
+                            maxlength="1000"
+                            placeholder="Ide írd a megjegyzésed..."
+                        ></textarea>
+
+                        <button onclick="saveComment()">
+                            💾 Megjegyzés mentése
+                        </button>
+
+                        <button onclick="skipComment()">
+                            ➡️ Tovább
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Boríték eleje -->
+                <div class="envelope-front"></div>
+
+
+                <!-- Boríték hajtóka -->
+                <div class="envelope-flap"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
          JAVASCRIPT
          ========================= -->
 
