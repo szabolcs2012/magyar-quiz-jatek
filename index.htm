@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kvíz Játék</title>
 
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- KEZDŐKÉPERNYŐ -->
+    <div id="start-screen" class="screen">
+        <h1>🧠 Kvíz Játék</h1>
+
+        <p>Add meg a neved!</p>
+
+        <input 
+            type="text" 
+            id="player-name" 
+            placeholder="Írd be a neved..."
+            maxlength="20"
+        >
+
+        <button onclick="startGame()">KEZDÉS</button>
+    </div>
+
+
+    <!-- KÉRDÉSSZÁM VÁLASZTÁS -->
+    <div id="question-count-screen" class="screen hidden">
+        <h1>Hány kérdést szeretnél?</h1>
+
+        <p id="welcome-text"></p>
+
+        <div class="question-buttons">
+            <button onclick="selectQuestionCount(30)">30 kérdés</button>
+            <button onclick="selectQuestionCount(60)">60 kérdés</button>
+            <button onclick="selectQuestionCount(120)">120 kérdés</button>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
