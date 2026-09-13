@@ -1,4 +1,3 @@
-
 ```css
 * {
     box-sizing: border-box;
@@ -23,7 +22,6 @@ body {
    KÉPERNYŐK
    ========================= */
 
-/* CSAK AZ AKTUÁLIS KÉPERNYŐ LÁTSZIK */
 .hidden {
     display: none !important;
 }
@@ -89,7 +87,7 @@ input:focus {
 
 
 /* =========================
-   ÁLTALÁNOS GOMBOK
+   GOMBOK
    ========================= */
 
 button {
@@ -162,6 +160,7 @@ button:disabled {
 
 #category-buttons button.selected {
     background: #4caf50;
+
     color: white;
 
     box-shadow:
@@ -170,10 +169,10 @@ button:disabled {
 
 
 /* =========================
-   KATEGÓRIA TOVÁBB GOMB
+   KATEGÓRIA TOVÁBB
    ========================= */
 
-#category-screen > button:last-child {
+#category-screen > button {
     width: 100%;
     margin-top: 15px;
 }
@@ -191,7 +190,7 @@ button:disabled {
 
 
 /* =========================
-   KVÍZ VÁLASZOK
+   KVÍZ
    ========================= */
 
 #answers {
@@ -210,7 +209,7 @@ button:disabled {
 
 
 /* =========================
-   HELYES VÁLASZ
+   HELYES
    ========================= */
 
 .correct {
@@ -223,7 +222,7 @@ button:disabled {
 
 
 /* =========================
-   HIBÁS VÁLASZ
+   HIBÁS
    ========================= */
 
 .wrong {
@@ -236,7 +235,7 @@ button:disabled {
 
 
 /* =========================
-   HELYES VÁLASZ VILLOGÁSA
+   HELYES VÁLASZ VILLOGÁS
    ========================= */
 
 @keyframes correctFlash {
@@ -268,8 +267,7 @@ button:disabled {
 }
 
 .correct.flash {
-    animation:
-        correctFlash 0.5s ease-in-out 3;
+    animation: correctFlash 0.5s ease-in-out 3;
 }
 
 
@@ -279,7 +277,9 @@ button:disabled {
 
 #score {
     margin-top: 25px;
+
     font-weight: bold;
+
     font-size: 18px;
 }
 
@@ -293,20 +293,30 @@ button:disabled {
     margin-bottom: 20px;
 }
 
+#leaderboard-list p,
 #leaderboard-list div {
     background: #f5f5f5;
+
     padding: 15px;
+
     margin: 8px 0;
+
     border-radius: 10px;
+
     font-size: 17px;
 }
 
 
 /* =========================
-   BORÍTÉK / LEVÉL
+   LEVÉL / BORÍTÉK
    ========================= */
 
-.letter-overlay {
+/* FONTOS:
+   Az index.html-ben ID-k vannak,
+   ezért itt ID alapján formázzuk őket.
+*/
+
+#letter-overlay {
     position: fixed;
 
     inset: 0;
@@ -316,6 +326,7 @@ button:disabled {
     display: flex;
 
     justify-content: center;
+
     align-items: center;
 
     background: rgba(0, 0, 0, 0.72);
@@ -323,23 +334,16 @@ button:disabled {
     padding: 20px;
 }
 
-.letter-overlay.hidden {
+#letter-overlay.hidden {
     display: none !important;
 }
 
-.envelope-container {
-    width: 100%;
-    max-width: 600px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.envelope {
+#envelope {
     position: relative;
 
     width: 500px;
+
     max-width: 100%;
 
     min-height: 330px;
@@ -347,7 +351,12 @@ button:disabled {
     perspective: 1000px;
 }
 
-.envelope-back {
+
+/* Boríték hátulja */
+
+#envelope::before {
+    content: "";
+
     position: absolute;
 
     inset: 0;
@@ -360,31 +369,10 @@ button:disabled {
         0 20px 50px rgba(0, 0, 0, 0.35);
 }
 
-.envelope-front {
-    position: absolute;
 
-    left: 0;
-    right: 0;
-    bottom: 0;
+/* Boríték füle */
 
-    height: 55%;
-
-    background: #e5b957;
-
-    clip-path: polygon(
-        0 0,
-        50% 60%,
-        100% 0,
-        100% 100%,
-        0 100%
-    );
-
-    border-radius: 0 0 12px 12px;
-
-    z-index: 4;
-}
-
-.envelope-flap {
+#envelope-flap {
     position: absolute;
 
     top: 0;
@@ -408,10 +396,14 @@ button:disabled {
     z-index: 5;
 }
 
-.letter {
+
+/* Levél */
+
+#letter {
     position: absolute;
 
     left: 5%;
+
     width: 90%;
 
     bottom: 25px;
@@ -432,20 +424,20 @@ button:disabled {
         0 10px 30px rgba(0, 0, 0, 0.20);
 }
 
-.letter-content {
-    text-align: center;
-}
-
-.letter-content h2 {
+#letter h2 {
     margin-bottom: 15px;
 }
 
-.letter-content p {
+#letter p {
     font-size: 16px;
+
     line-height: 1.5;
 
     margin-bottom: 15px;
 }
+
+
+/* Megjegyzés mező */
 
 #player-comment {
     width: 100%;
@@ -478,11 +470,11 @@ button:disabled {
    BORÍTÉK ANIMÁCIÓ
    ========================= */
 
-.letter-overlay.animate .envelope-flap {
+#letter-overlay.animate #envelope-flap {
     transform: rotateX(180deg);
 }
 
-.letter-overlay.animate .letter {
+#letter-overlay.animate #letter {
     transform: translateY(-70px);
 }
 
@@ -510,11 +502,524 @@ button:disabled {
         margin: 7px 0;
     }
 
-    .letter {
+    #letter {
         padding: 18px;
     }
 
-    .envelope {
+    #envelope {
+        min-height: 300px;
+    }
+}
+```
+```css
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+
+/* =========================
+   KÉPERNYŐK
+   ========================= */
+
+.hidden {
+    display: none !important;
+}
+
+.screen {
+    background: white;
+
+    width: 100%;
+    max-width: 600px;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.20);
+}
+
+.screen h1 {
+    margin-bottom: 25px;
+    color: #222;
+}
+
+.screen h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.screen p {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #444;
+}
+
+
+/* =========================
+   NÉV MEZŐ
+   ========================= */
+
+input {
+    width: 100%;
+
+    padding: 15px;
+
+    margin-bottom: 20px;
+
+    border: 2px solid #ddd;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+input:focus {
+    border-color: #667eea;
+}
+
+
+/* =========================
+   GOMBOK
+   ========================= */
+
+button {
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 15px 25px;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    margin: 8px;
+
+    background: #667eea;
+
+    color: white;
+
+    transition:
+        transform 0.2s,
+        opacity 0.2s,
+        box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+
+    opacity: 0.9;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:disabled {
+    cursor: default;
+    opacity: 1;
+}
+
+
+/* =========================
+   KÉRDÉSSZÁM
+   ========================= */
+
+#question-count-screen button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+}
+
+
+/* =========================
+   KATEGÓRIÁK
+   ========================= */
+
+#category-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#category-buttons button {
+    width: 100%;
+    margin: 8px 0;
+}
+
+#category-buttons button.selected {
+    background: #4caf50;
+
+    color: white;
+
+    box-shadow:
+        0 0 0 3px rgba(76, 175, 80, 0.20);
+}
+
+
+/* =========================
+   KATEGÓRIA TOVÁBB
+   ========================= */
+
+#category-screen > button {
+    width: 100%;
+    margin-top: 15px;
+}
+
+
+/* =========================
+   NEHÉZSÉG
+   ========================= */
+
+#difficulty-screen button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+}
+
+
+/* =========================
+   KVÍZ
+   ========================= */
+
+#answers {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+#answers button {
+    width: 100%;
+    margin: 0;
+}
+
+
+/* =========================
+   HELYES
+   ========================= */
+
+.correct {
+    background-color: #4caf50 !important;
+    color: white !important;
+
+    box-shadow:
+        0 0 15px rgba(76, 175, 80, 0.55);
+}
+
+
+/* =========================
+   HIBÁS
+   ========================= */
+
+.wrong {
+    background-color: #f44336 !important;
+    color: white !important;
+
+    box-shadow:
+        0 0 15px rgba(244, 67, 54, 0.45);
+}
+
+
+/* =========================
+   HELYES VÁLASZ VILLOGÁS
+   ========================= */
+
+@keyframes correctFlash {
+
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    25% {
+        opacity: 0.45;
+        transform: scale(1.04);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.06);
+    }
+
+    75% {
+        opacity: 0.45;
+        transform: scale(1.04);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.correct.flash {
+    animation: correctFlash 0.5s ease-in-out 3;
+}
+
+
+/* =========================
+   PONTSZÁM
+   ========================= */
+
+#score {
+    margin-top: 25px;
+
+    font-weight: bold;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   LEADERBOARD
+   ========================= */
+
+#leaderboard-list {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#leaderboard-list p,
+#leaderboard-list div {
+    background: #f5f5f5;
+
+    padding: 15px;
+
+    margin: 8px 0;
+
+    border-radius: 10px;
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   LEVÉL / BORÍTÉK
+   ========================= */
+
+/* FONTOS:
+   Az index.html-ben ID-k vannak,
+   ezért itt ID alapján formázzuk őket.
+*/
+
+#letter-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.72);
+
+    padding: 20px;
+}
+
+#letter-overlay.hidden {
+    display: none !important;
+}
+
+
+#envelope {
+    position: relative;
+
+    width: 500px;
+
+    max-width: 100%;
+
+    min-height: 330px;
+
+    perspective: 1000px;
+}
+
+
+/* Boríték hátulja */
+
+#envelope::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: #d9a441;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+
+/* Boríték füle */
+
+#envelope-flap {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 55%;
+
+    background: #f0c96b;
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        50% 100%
+    );
+
+    transform-origin: top center;
+
+    transition: transform 0.8s ease;
+
+    z-index: 5;
+}
+
+
+/* Levél */
+
+#letter {
+    position: absolute;
+
+    left: 5%;
+
+    width: 90%;
+
+    bottom: 25px;
+
+    background: white;
+
+    border-radius: 10px;
+
+    padding: 25px;
+
+    z-index: 3;
+
+    transform: translateY(0);
+
+    transition: transform 1s ease;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.20);
+}
+
+#letter h2 {
+    margin-bottom: 15px;
+}
+
+#letter p {
+    font-size: 16px;
+
+    line-height: 1.5;
+
+    margin-bottom: 15px;
+}
+
+
+/* Megjegyzés mező */
+
+#player-comment {
+    width: 100%;
+
+    min-height: 180px;
+
+    resize: vertical;
+
+    padding: 12px;
+
+    border: 2px solid #ddd;
+
+    border-radius: 10px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 16px;
+
+    margin-bottom: 10px;
+}
+
+#player-comment:focus {
+    outline: none;
+
+    border-color: #667eea;
+}
+
+
+/* =========================
+   BORÍTÉK ANIMÁCIÓ
+   ========================= */
+
+#letter-overlay.animate #envelope-flap {
+    transform: rotateX(180deg);
+}
+
+#letter-overlay.animate #letter {
+    transform: translateY(-70px);
+}
+
+
+/* =========================
+   MOBIL
+   ========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .screen {
+        padding: 25px 20px;
+    }
+
+    .screen h1 {
+        font-size: 25px;
+    }
+
+    button {
+        width: 100%;
+        margin: 7px 0;
+    }
+
+    #letter {
+        padding: 18px;
+    }
+
+    #envelope {
         min-height: 300px;
     }
 }
