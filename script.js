@@ -117,8 +117,10 @@ const questions = [
     },
 
     {
-        category: "biologia",
-        question: "Hány lába van egy póknak?",
+        {
+    category: "biologia",
+    difficulty: "konnyu",
+    question: "Hány lába van egy póknak?",
         answers: [
             "6",
             "8",
