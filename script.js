@@ -581,6 +581,135 @@ const questions = [
         "Horvátország"
     ],
     correct: 1
+            {
+    category: "foldrajz",
+    difficulty: "kozepes",
+    question: "Melyik ország területén található az Alpok legnagyobb része?",
+    answers: [
+        "Ausztria",
+        "Svájc",
+        "Németország",
+        "Franciaország"
+    ],
+    correct: 0
+},
+
+{
+    category: "foldrajz",
+    difficulty: "kozepes",
+    question: "Melyik folyó a leghosszabb Európában?",
+    answers: [
+        "Duna",
+        "Volga",
+        "Rajna",
+        "Tisza"
+    ],
+    correct: 1
+},
+
+{
+    category: "foldrajz",
+    difficulty: "kozepes",
+    question: "Melyik országban található a Szahara legnagyobb része?",
+    answers: [
+        "Egyiptom",
+        "Líbia",
+        "Algéria",
+        "Marokkó"
+    ],
+    correct: 2
+},
+
+{
+    category: "foldrajz",
+    difficulty: "kozepes",
+    question: "Melyik tenger választja el Európát Afrikától?",
+    answers: [
+        "Földközi-tenger",
+        "Fekete-tenger",
+        "Balti-tenger",
+        "Északi-tenger"
+    ],
+    correct: 0
+},
+
+{
+    category: "foldrajz",
+    difficulty: "kozepes",
+    question: "Melyik ország fővárosa Oslo?",
+    answers: [
+        "Svédország",
+        "Norvégia",
+        "Finnország",
+        "Dánia"
+    ],
+    correct: 1
+},
+
+{
+    category: "foldrajz",
+    difficulty: "kozepes",
+    question: "Melyik a világ legnagyobb sivataga?",
+    answers: [
+        "Szahara",
+        "Góbi",
+        "Antarktiszi-sivatag",
+        "Arab-sivatag"
+    ],
+    correct: 2
+},
+
+{
+    category: "foldrajz",
+    difficulty: "kozepes",
+    question: "Melyik országban található a Himalája jelentős része?",
+    answers: [
+        "Nepál",
+        "Spanyolország",
+        "Mexikó",
+        "Ausztrália"
+    ],
+    correct: 0
+},
+
+{
+    category: "foldrajz",
+    difficulty: "kozepes",
+    question: "Melyik folyó torkollik a Fekete-tengerbe?",
+    answers: [
+        "Duna",
+        "Temze",
+        "Szajna",
+        "Pó"
+    ],
+    correct: 0
+},
+
+{
+    category: "foldrajz",
+    difficulty: "kozepes",
+    question: "Melyik ország a legnagyobb területű a világon?",
+    answers: [
+        "Kanada",
+        "Kína",
+        "Oroszország",
+        "USA"
+    ],
+    correct: 2
+},
+
+{
+    category: "foldrajz",
+    difficulty: "kozepes",
+    question: "Melyik országban található a Gíza-fennsík?",
+    answers: [
+        "Törökország",
+        "Egyiptom",
+        "Jordánia",
+        "Tunézia"
+    ],
+    correct: 1
+},
 },
     },
 
