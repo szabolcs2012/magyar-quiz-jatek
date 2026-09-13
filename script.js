@@ -1,6 +1,7 @@
 let playerName = "";
 let questionCount = 0;
 let selectedCategories = [];
+let selectedDifficulty = "";
 
 let currentQuestionIndex = 0;
 let correctAnswers = 0;
