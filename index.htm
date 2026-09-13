@@ -16,10 +16,7 @@
 
 <body>
 
-    <!-- ========================================= -->
     <!-- KEZDŐKÉPERNYŐ -->
-    <!-- ========================================= -->
-
     <div id="start-screen" class="screen">
 
         <h1>🧠 Kvíz Játék</h1>
@@ -34,39 +31,41 @@
         >
 
         <button onclick="startGame()">
-            KEZDÉS
+            🎮 KEZDÉS
+        </button>
+
+        <button onclick="showLeaderboard()">
+            🏆 LEADERBOARD
         </button>
 
     </div>
 
 
-    <!-- ========================================= -->
     <!-- KÉRDÉSSZÁM -->
-    <!-- ========================================= -->
-
     <div id="question-count-screen" class="screen hidden">
 
         <h1>🔢 Hány kérdést szeretnél?</h1>
 
-        <button onclick="selectQuestionCount(30)">
-            30 kérdés
-        </button>
+        <div class="question-buttons">
 
-        <button onclick="selectQuestionCount(60)">
-            60 kérdés
-        </button>
+            <button onclick="selectQuestionCount(30)">
+                30 kérdés
+            </button>
 
-        <button onclick="selectQuestionCount(120)">
-            120 kérdés
-        </button>
+            <button onclick="selectQuestionCount(60)">
+                60 kérdés
+            </button>
+
+            <button onclick="selectQuestionCount(120)">
+                120 kérdés
+            </button>
+
+        </div>
 
     </div>
 
 
-    <!-- ========================================= -->
     <!-- KATEGÓRIA -->
-    <!-- ========================================= -->
-
     <div id="category-screen" class="screen hidden">
 
         <h1>📚 Válassz kategóriát!</h1>
@@ -75,7 +74,7 @@
             Válaszd ki, milyen témákból szeretnél kérdéseket.
         </p>
 
-        <div id="category-buttons">
+        <div id="category-buttons" class="categories">
 
             <button
                 type="button"
@@ -99,4 +98,121 @@
             </button>
 
             <button
+                type="button"
+                onclick="toggleCategory('biologia')"
+            >
+                🧬 Biológia
+            </button>
+
+        </div>
+
+        <button onclick="startQuiz()">
+            🚀 Tovább
+        </button>
+
+    </div>
+
+
+    <!-- NEHÉZSÉG -->
+    <div id="difficulty-screen" class="screen hidden">
+
+        <h1>🎯 Válassz nehézséget!</h1>
+
+        <div class="difficulty-buttons">
+
+            <button onclick="selectDifficulty('konnyu')">
+                🟢 Könnyű
+            </button>
+
+            <button onclick="selectDifficulty('kozepes')">
+                🟡 Közepes
+            </button>
+
+            <button onclick="selectDifficulty('nehez')">
+                🔴 Nehéz
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- KVÍZ -->
+    <div id="quiz-screen" class="screen hidden">
+
+        <h1 id="question-number">
+            Kérdés
+        </h1>
+
+        <h2 id="question">
+            Kérdés szövege
+        </h2>
+
+        <div id="answers"></div>
+
+        <p id="score">
+            Pontszám: 0
+        </p>
+
+    </div>
+
+
+    <!-- LEADERBOARD -->
+    <div id="leaderboard-screen" class="screen hidden">
+
+        <h1>🏆 LEADERBOARD</h1>
+
+        <div id="leaderboard-list"></div>
+
+        <button onclick="showScreen('start-screen')">
+            ⬅️ Vissza
+        </button>
+
+    </div>
+
+
+    <!-- BORÍTÉK / LEVÉL -->
+    <div id="letter-overlay" class="hidden">
+
+        <div id="envelope">
+
+            <div id="envelope-flap"></div>
+
+            <div id="letter">
+
+                <h2>✉️ Egy üzenet neked</h2>
+
+                <p>
+                    Kedves Kvíz játékos!!!
+                    Ha tetszik a játék vagy hasonló ötleteid vannak
+                    akkor ird be a megjegyzésbe és ha nem akkor ird le
+                    hogy mit kéne változtatni rajta.
+                </p>
+
+                <textarea
+                    id="player-comment"
+                    rows="10"
+                    placeholder="Írd ide a megjegyzésed..."
+                ></textarea>
+
+                <button onclick="saveComment()">
+                    📩 Megjegyzés küldése
+                </button>
+
+                <button onclick="closeLetter()">
+                    Bezárás
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
 ```
