@@ -1,4 +1,3 @@
-
 ```html
 <!DOCTYPE html>
 <html lang="hu">
@@ -6,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Kvíz Játék</title>
+    <title>🧠 Magyar Kvíz Játék</title>
 
     <link rel="stylesheet" href="style.css">
 
@@ -16,7 +15,10 @@
 
 <body>
 
-    <!-- KEZDŐKÉPERNYŐ -->
+    <!-- =====================================
+         KEZDŐKÉPERNYŐ
+         ===================================== -->
+
     <div id="start-screen" class="screen">
 
         <h1>🧠 Kvíz Játék</h1>
@@ -28,35 +30,59 @@
             id="player-name"
             placeholder="Írd be a neved..."
             autocomplete="off"
+            maxlength="30"
         >
 
-        <button onclick="startGame()">
+        <button
+            type="button"
+            onclick="startGame()"
+        >
             🎮 KEZDÉS
         </button>
 
-        <button onclick="showLeaderboard()">
+        <button
+            type="button"
+            onclick="showLeaderboard()"
+        >
             🏆 LEADERBOARD
         </button>
 
     </div>
 
 
-    <!-- KÉRDÉSSZÁM -->
-    <div id="question-count-screen" class="screen hidden">
+    <!-- =====================================
+         KÉRDÉSSZÁM
+         ===================================== -->
+
+    <div
+        id="question-count-screen"
+        class="screen hidden"
+    >
 
         <h1>🔢 Hány kérdést szeretnél?</h1>
 
+        <p>Válassz egyet:</p>
+
         <div class="question-buttons">
 
-            <button onclick="selectQuestionCount(30)">
+            <button
+                type="button"
+                onclick="selectQuestionCount(30)"
+            >
                 30 kérdés
             </button>
 
-            <button onclick="selectQuestionCount(60)">
+            <button
+                type="button"
+                onclick="selectQuestionCount(60)"
+            >
                 60 kérdés
             </button>
 
-            <button onclick="selectQuestionCount(120)">
+            <button
+                type="button"
+                onclick="selectQuestionCount(120)"
+            >
                 120 kérdés
             </button>
 
@@ -65,16 +91,25 @@
     </div>
 
 
-    <!-- KATEGÓRIA -->
-    <div id="category-screen" class="screen hidden">
+    <!-- =====================================
+         KATEGÓRIA
+         ===================================== -->
+
+    <div
+        id="category-screen"
+        class="screen hidden"
+    >
 
         <h1>📚 Válassz kategóriát!</h1>
 
         <p>
-            Válaszd ki, milyen témákból szeretnél kérdéseket.
+            Akár több kategóriát is kiválaszthatsz.
         </p>
 
-        <div id="category-buttons" class="categories">
+        <div
+            id="category-buttons"
+            class="categories"
+        >
 
             <button
                 type="button"
@@ -106,29 +141,49 @@
 
         </div>
 
-        <button onclick="startQuiz()">
+        <button
+            type="button"
+            onclick="startQuiz()"
+        >
             🚀 Tovább
         </button>
 
     </div>
 
 
-    <!-- NEHÉZSÉG -->
-    <div id="difficulty-screen" class="screen hidden">
+    <!-- =====================================
+         NEHÉZSÉG
+         ===================================== -->
+
+    <div
+        id="difficulty-screen"
+        class="screen hidden"
+    >
 
         <h1>🎯 Válassz nehézséget!</h1>
 
+        <p>Válaszd ki a játék nehézségét:</p>
+
         <div class="difficulty-buttons">
 
-            <button onclick="selectDifficulty('konnyu')">
+            <button
+                type="button"
+                onclick="selectDifficulty('konnyu')"
+            >
                 🟢 Könnyű
             </button>
 
-            <button onclick="selectDifficulty('kozepes')">
+            <button
+                type="button"
+                onclick="selectDifficulty('kozepes')"
+            >
                 🟡 Közepes
             </button>
 
-            <button onclick="selectDifficulty('nehez')">
+            <button
+                type="button"
+                onclick="selectDifficulty('nehez')"
+            >
                 🔴 Nehéz
             </button>
 
@@ -137,11 +192,17 @@
     </div>
 
 
-    <!-- KVÍZ -->
-    <div id="quiz-screen" class="screen hidden">
+    <!-- =====================================
+         KVÍZ
+         ===================================== -->
+
+    <div
+        id="quiz-screen"
+        class="screen hidden"
+    >
 
         <h1 id="question-number">
-            Kérdés
+            Kérdés 1
         </h1>
 
         <h2 id="question">
@@ -157,22 +218,37 @@
     </div>
 
 
-    <!-- LEADERBOARD -->
-    <div id="leaderboard-screen" class="screen hidden">
+    <!-- =====================================
+         LEADERBOARD
+         ===================================== -->
+
+    <div
+        id="leaderboard-screen"
+        class="screen hidden"
+    >
 
         <h1>🏆 LEADERBOARD</h1>
 
         <div id="leaderboard-list"></div>
 
-        <button onclick="showScreen('start-screen')">
+        <button
+            type="button"
+            onclick="showScreen('start-screen')"
+        >
             ⬅️ Vissza
         </button>
 
     </div>
 
 
-    <!-- BORÍTÉK / LEVÉL -->
-    <div id="letter-overlay" class="hidden">
+    <!-- =====================================
+         EREDMÉNY / LEVÉL
+         ===================================== -->
+
+    <div
+        id="letter-overlay"
+        class="hidden"
+    >
 
         <div id="envelope">
 
@@ -184,22 +260,29 @@
 
                 <p>
                     Kedves Kvíz játékos!!!
-                    Ha tetszik a játék vagy hasonló ötleteid vannak
-                    akkor ird be a megjegyzésbe és ha nem akkor ird le
-                    hogy mit kéne változtatni rajta.
+                    Ha tetszik a játék vagy hasonló ötleteid vannak,
+                    akkor írd be a megjegyzésbe, és ha nem,
+                    akkor írd le, hogy mit kéne változtatni rajta.
                 </p>
 
                 <textarea
                     id="player-comment"
                     rows="10"
+                    maxlength="1000"
                     placeholder="Írd ide a megjegyzésed..."
                 ></textarea>
 
-                <button onclick="saveComment()">
+                <button
+                    type="button"
+                    onclick="saveComment()"
+                >
                     📩 Megjegyzés küldése
                 </button>
 
-                <button onclick="closeLetter()">
+                <button
+                    type="button"
+                    onclick="closeLetter()"
+                >
                     Bezárás
                 </button>
 
@@ -210,7 +293,10 @@
     </div>
 
 
-    <!-- JAVASCRIPT -->
+    <!-- =====================================
+         JAVASCRIPT
+         ===================================== -->
+
     <script src="script.js"></script>
 
 </body>
