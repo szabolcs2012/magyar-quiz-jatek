@@ -39,6 +39,135 @@ const questions = [
             "Egér"
         ],
         correct: 0
+        {
+    category: "informatika",
+    difficulty: "konnyu",
+    question: "Melyik billentyűvel lehet új sort kezdeni?",
+    answers: [
+        "Shift",
+        "Enter",
+        "Ctrl",
+        "Alt"
+    ],
+    correct: 1
+},
+
+{
+    category: "informatika",
+    difficulty: "konnyu",
+    question: "Melyik eszközzel mozgatjuk általában a kurzort?",
+    answers: [
+        "Nyomtató",
+        "Monitor",
+        "Egér",
+        "Hangszóró"
+    ],
+    correct: 2
+},
+
+{
+    category: "informatika",
+    difficulty: "konnyu",
+    question: "Mit jelent a RAM rövidítés?",
+    answers: [
+        "Random Access Memory",
+        "Read Access Machine",
+        "Rapid Action Memory",
+        "Run Application Mode"
+    ],
+    correct: 0
+},
+
+{
+    category: "informatika",
+    difficulty: "konnyu",
+    question: "Melyik programmal lehet internetes oldalakat megnyitni?",
+    answers: [
+        "Böngésző",
+        "Számológép",
+        "Jegyzettömb",
+        "Fájlkezelő"
+    ],
+    correct: 0
+},
+
+{
+    category: "informatika",
+    difficulty: "konnyu",
+    question: "Melyik ezek közül operációs rendszer?",
+    answers: [
+        "Windows",
+        "Google",
+        "YouTube",
+        "Facebook"
+    ],
+    correct: 0
+},
+
+{
+    category: "informatika",
+    difficulty: "konnyu",
+    question: "Melyik eszköz jeleníti meg a képet a számítógépen?",
+    answers: [
+        "Billentyűzet",
+        "Monitor",
+        "Egér",
+        "Mikrofon"
+    ],
+    correct: 1
+},
+
+{
+    category: "informatika",
+    difficulty: "konnyu",
+    question: "Melyik billentyű töröl egy karaktert a kurzor bal oldaláról?",
+    answers: [
+        "Enter",
+        "Backspace",
+        "Tab",
+        "Shift"
+    ],
+    correct: 1
+},
+
+{
+    category: "informatika",
+    difficulty: "konnyu",
+    question: "Melyik eszközzel lehet dokumentumot papírra nyomtatni?",
+    answers: [
+        "Scanner",
+        "Router",
+        "Nyomtató",
+        "Webkamera"
+    ],
+    correct: 2
+},
+
+{
+    category: "informatika",
+    difficulty: "konnyu",
+    question: "Mit jelent a Wi-Fi?",
+    answers: [
+        "Vezeték nélküli hálózati kapcsolat",
+        "Videófájl formátum",
+        "Számítógépes játék",
+        "Operációs rendszer"
+    ],
+    correct: 0
+},
+
+{
+    category: "informatika",
+    difficulty: "konnyu",
+    question: "Melyik billentyűkombinációval lehet általában másolni?",
+    answers: [
+        "Ctrl + V",
+        "Ctrl + X",
+        "Ctrl + C",
+        "Ctrl + Z"
+    ],
+    correct: 2
+},
     },
 
     // FÖLDRAJZ
