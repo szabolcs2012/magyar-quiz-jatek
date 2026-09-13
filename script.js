@@ -867,6 +867,135 @@ const questions = [
             "Könyves Kálmán"
         ],
         correct: 2
+        {
+    category: "tortenelem",
+    difficulty: "konnyu",
+    question: "Mikor volt az 1848–49-es forradalom és szabadságharc kezdete?",
+    answers: [
+        "1848",
+        "1867",
+        "1914",
+        "1956"
+    ],
+    correct: 0
+},
+
+{
+    category: "tortenelem",
+    difficulty: "konnyu",
+    question: "Ki volt a magyarok fejedelme a honfoglalás idején?",
+    answers: [
+        "Árpád",
+        "Szent István",
+        "Mátyás király",
+        "Kossuth Lajos"
+    ],
+    correct: 0
+},
+
+{
+    category: "tortenelem",
+    difficulty: "konnyu",
+    question: "Melyik évben koronázták királlyá Szent Istvánt?",
+    answers: [
+        "1000/1001",
+        "896",
+        "1241",
+        "1458"
+    ],
+    correct: 0
+},
+
+{
+    category: "tortenelem",
+    difficulty: "konnyu",
+    question: "Ki volt híres magyar király a Hunyadiak korában?",
+    answers: [
+        "Mátyás király",
+        "IV. Béla",
+        "I. István",
+        "II. András"
+    ],
+    correct: 0
+},
+
+{
+    category: "tortenelem",
+    difficulty: "konnyu",
+    question: "Melyik évben történt a magyar honfoglalás kezdete?",
+    answers: [
+        "896",
+        "1000",
+        "1241",
+        "1526"
+    ],
+    correct: 0
+},
+
+{
+    category: "tortenelem",
+    difficulty: "konnyu",
+    question: "Ki volt az 1848–49-es szabadságharc egyik legismertebb vezetője?",
+    answers: [
+        "Kossuth Lajos",
+        "Széchenyi István",
+        "Deák Ferenc",
+        "Mikszáth Kálmán"
+    ],
+    correct: 0
+},
+
+{
+    category: "tortenelem",
+    difficulty: "konnyu",
+    question: "Melyik évben tört ki a magyar forradalom 1956-ban?",
+    answers: [
+        "1945",
+        "1956",
+        "1968",
+        "1989"
+    ],
+    correct: 1
+},
+
+{
+    category: "tortenelem",
+    difficulty: "konnyu",
+    question: "Ki volt Magyarország első királya?",
+    answers: [
+        "Szent István",
+        "Mátyás király",
+        "Árpád",
+        "IV. Béla"
+    ],
+    correct: 0
+},
+
+{
+    category: "tortenelem",
+    difficulty: "konnyu",
+    question: "Melyik birodalom uralta Magyarország középső részét évszázadokon át?",
+    answers: [
+        "Oszmán Birodalom",
+        "Római Birodalom",
+        "Brit Birodalom",
+        "Francia Birodalom"
+    ],
+    correct: 0
+},
+
+{
+    category: "tortenelem",
+    difficulty: "konnyu",
+    question: "Mikor történt a rendszerváltás Magyarországon?",
+    answers: [
+        "1945",
+        "1956",
+        "1989–1990",
+        "2004"
+    ],
+    correct: 2
+},
     },
 
     // BIOLÓGIA
