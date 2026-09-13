@@ -1,4 +1,3 @@
-
 let playerName = "";
 let questionCount = 0;
 let selectedCategories = [];
@@ -1911,7 +1910,7 @@ function checkAnswer(selectedAnswer) {
             .classList.add("wrong");
 
         buttons[question.correct]
-            .classList.add("correct");
+            .classList.add("correct", "flash");
     }
 
     updateScore();
@@ -1929,7 +1928,7 @@ function checkAnswer(selectedAnswer) {
             finishQuiz();
         }
 
-    }, 1000);
+    }, 1500);
 }
 
 
