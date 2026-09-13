@@ -1,174 +1,102 @@
 
 ```html
-<!-- KEZDŐKÉPERNYŐ -->
-<div id="start-screen" class="screen">
-    <h1>🧠 Kvíz Játék</h1>
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <p>Add meg a neved!</p>
+    <title>Kvíz Játék</title>
 
-    <input
-        type="text"
-        id="player-name"
-        placeholder="Írd be a neved..."
-    >
+    <link rel="stylesheet" href="style.css">
 
-    <button onclick="startGame()">KEZDÉS</button>
-</div>
+    <!-- EMAILJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
 
+<body>
 
-<!-- KÉRDÉSSZÁM -->
-<div id="question-count-screen" class="screen hidden">
-    <h1>🔢 Hány kérdést szeretnél?</h1>
+    <!-- ========================================= -->
+    <!-- KEZDŐKÉPERNYŐ -->
+    <!-- ========================================= -->
 
-    <button onclick="selectQuestionCount(30)">30 kérdés</button>
-    <button onclick="selectQuestionCount(60)">60 kérdés</button>
-    <button onclick="selectQuestionCount(120)">120 kérdés</button>
-</div>
+    <div id="start-screen" class="screen">
 
+        <h1>🧠 Kvíz Játék</h1>
 
-<!-- KATEGÓRIA -->
-<div id="category-screen" class="screen hidden">
-    <h1>📚 Válassz kategóriát!</h1>
+        <p>Add meg a neved!</p>
 
-    <p>Válaszd ki, milyen témákból szeretnél kérdéseket.</p>
+        <input
+            type="text"
+            id="player-name"
+            placeholder="Írd be a neved..."
+            autocomplete="off"
+        >
 
-    <button onclick="toggleCategory('informatika')">
-        💻 Informatika
-    </button>
-
-    <button onclick="toggleCategory('foldrajz')">
-        🌍 Földrajz
-    </button>
-
-    <button onclick="toggleCategory('tortenelem')">
-        📜 Történelem
-    </button>
-
-    <button onclick="toggleCategory('biologia')">
-        🧬 Biológia
-    </button>
-
-    <br>
-
-    <button onclick="startQuiz()">
-        Kvíz indítása 🚀
-    </button>
-</div>
-
-
-<!-- NEHÉZSÉG -->
-<div id="difficulty-screen" class="screen hidden">
-    <h1>🎯 Válassz nehézséget!</h1>
-
-    <p>Milyen nehézségű kérdéseket szeretnél?</p>
-
-    <button onclick="selectDifficulty('konnyu')">
-        🟢 Könnyű
-    </button>
-
-    <button onclick="selectDifficulty('kozepes')">
-        🟡 Közepes
-    </button>
-
-    <button onclick="selectDifficulty('nehez')">
-        🔴 Nehéz
-    </button>
-</div>
-
-
-<!-- KVÍZ -->
-<div id="quiz-screen" class="screen hidden">
-    <h2 id="question-number">1 / 30</h2>
-
-    <h1 id="question-text">
-        Kérdés helye
-    </h1>
-
-    <div id="answers">
-        <button>Válasz A</button>
-        <button>Válasz B</button>
-        <button>Válasz C</button>
-        <button>Válasz D</button>
-    </div>
-
-    <p id="score">
-        ✅ Helyes: 0 | ❌ Helytelen: 0
-    </p>
-</div>
-
-
-<!-- LEADERBOARD -->
-<div id="leaderboard-screen" class="screen hidden">
-    <h1>🏆 Leaderboard</h1>
-
-    <p>A már játszott játékosok eredményei</p>
-
-    <div id="leaderboard-list"></div>
-
-    <button onclick="backToStart()">
-        ⬅️ Vissza
-    </button>
-</div>
-
-
-<!-- LEVÉL / BORÍTÉK -->
-<div id="letter-overlay" class="letter-overlay hidden">
-
-    <div class="envelope-container">
-
-        <div id="envelope" class="envelope">
-
-            <div class="envelope-back"></div>
-
-            <div class="letter">
-
-                <div class="letter-content">
-
-                    <h2>💌 Kedves Kvíz játékos!!!</h2>
-
-                    <p>
-                        Ha tetszik a játék vagy hasonló
-                        ötleteid vannak, akkor írd be
-                        a megjegyzésbe, és ha nem,
-                        akkor írd le, hogy mit kéne
-                        változtatni rajta!
-                    </p>
-
-                    <textarea
-                        id="player-comment"
-                        rows="10"
-                        maxlength="1000"
-                        placeholder="Ide írd a megjegyzésed..."
-                    ></textarea>
-
-                    <button onclick="saveComment()">
-                        💾 Megjegyzés küldése
-                    </button>
-
-                    <button onclick="skipComment()">
-                        ➡️ Tovább
-                    </button>
-
-                </div>
-
-            </div>
-
-            <div class="envelope-front"></div>
-            <div class="envelope-flap"></div>
-
-        </div>
+        <button onclick="startGame()">
+            KEZDÉS
+        </button>
 
     </div>
 
-</div>
+
+    <!-- ========================================= -->
+    <!-- KÉRDÉSSZÁM -->
+    <!-- ========================================= -->
+
+    <div id="question-count-screen" class="screen hidden">
+
+        <h1>🔢 Hány kérdést szeretnél?</h1>
+
+        <button onclick="selectQuestionCount(30)">
+            30 kérdés
+        </button>
+
+        <button onclick="selectQuestionCount(60)">
+            60 kérdés
+        </button>
+
+        <button onclick="selectQuestionCount(120)">
+            120 kérdés
+        </button>
+
+    </div>
 
 
-<!-- EMAILJS -->
-<script
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
+    <!-- ========================================= -->
+    <!-- KATEGÓRIA -->
+    <!-- ========================================= -->
 
-<!-- SAJÁT JAVASCRIPT -->
-<script src="script.js"></script>
+    <div id="category-screen" class="screen hidden">
+
+        <h1>📚 Válassz kategóriát!</h1>
+
+        <p>
+            Válaszd ki, milyen témákból szeretnél kérdéseket.
+        </p>
+
+        <div id="category-buttons">
+
+            <button
+                type="button"
+                onclick="toggleCategory('informatika')"
+            >
+                💻 Informatika
+            </button>
+
+            <button
+                type="button"
+                onclick="toggleCategory('foldrajz')"
+            >
+                🌍 Földrajz
+            </button>
+
+            <button
+                type="button"
+                onclick="toggleCategory('tortenelem')"
+            >
+                📜 Történelem
+            </button>
+
+            <button
 ```
-
