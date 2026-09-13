@@ -1,3 +1,4 @@
+```css
 * {
     box-sizing: border-box;
     margin: 0;
@@ -60,9 +61,6 @@ button {
     width: 100%;
 }
 
-.hidden {
-    display: none;
-}
 .categories {
     display: flex;
     flex-direction: column;
@@ -76,3 +74,63 @@ button {
     background: #4caf50;
     color: white;
 }
+
+.hidden {
+    display: none;
+}
+
+
+/* =========================
+   HELYES / HIBÁS VÁLASZ
+   ========================= */
+
+.correct {
+    background-color: #4caf50 !important;
+    color: white !important;
+}
+
+.wrong {
+    background-color: #f44336 !important;
+    color: white !important;
+}
+
+
+/* =========================
+   HELYES VÁLASZ VILLOGÁSA
+   ========================= */
+
+@keyframes correctFlash {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.4;
+        transform: scale(1.05);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.correct.flash {
+    animation: correctFlash 0.5s ease-in-out 3;
+}
+
+
+/* =========================
+   NEHÉZSÉG GOMBOK
+   ========================= */
+
+.difficulty-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.difficulty-buttons button {
+    width: 100%;
+}
+```
