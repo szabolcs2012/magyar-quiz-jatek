@@ -9,7 +9,38 @@
 </head>
 
 <body>
+<!-- KATEGÓRIA VÁLASZTÁS -->
+<div id="category-screen" class="screen hidden">
 
+    <h1>📚 Válassz kategóriát!</h1>
+
+    <p>Válaszd ki, milyen témákból szeretnél kérdéseket.</p>
+
+    <div class="categories">
+
+        <button onclick="toggleCategory(this, 'informatika')">
+            💻 Informatika
+        </button>
+
+        <button onclick="toggleCategory(this, 'foldrajz')">
+            🌍 Földrajz
+        </button>
+
+        <button onclick="toggleCategory(this, 'tortenelem')">
+            📜 Történelem
+        </button>
+
+        <button onclick="toggleCategory(this, 'biologia')">
+            🧬 Biológia
+        </button>
+
+    </div>
+
+    <button onclick="startQuiz()">
+        Kvíz indítása 🚀
+    </button>
+
+</div>
     <!-- KEZDŐKÉPERNYŐ -->
     <div id="start-screen" class="screen">
         <h1>🧠 Kvíz Játék</h1>
