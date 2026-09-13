@@ -1124,6 +1124,135 @@ const questions = [
         "2004"
     ],
     correct: 2
+    {
+    category: "tortenelem",
+    difficulty: "nehez",
+    question: "Melyik évben kezdődött a mohácsi csata?",
+    answers: [
+        "1526",
+        "1541",
+        "1456",
+        "1505"
+    ],
+    correct: 0
+},
+
+{
+    category: "tortenelem",
+    difficulty: "nehez",
+    question: "Melyik uralkodó idején történt a mohácsi csata?",
+    answers: [
+        "II. Lajos",
+        "Hunyadi Mátyás",
+        "II. András",
+        "IV. Béla"
+    ],
+    correct: 0
+},
+
+{
+    category: "tortenelem",
+    difficulty: "nehez",
+    question: "Melyik évben foglalták el a törökök Budát?",
+    answers: [
+        "1526",
+        "1541",
+        "1566",
+        "1686"
+    ],
+    correct: 1
+},
+
+{
+    category: "tortenelem",
+    difficulty: "nehez",
+    question: "Ki vezette az 1703-ban kezdődő Rákóczi-szabadságharcot?",
+    answers: [
+        "II. Rákóczi Ferenc",
+        "Kossuth Lajos",
+        "Széchenyi István",
+        "Görgei Artúr"
+    ],
+    correct: 0
+},
+
+{
+    category: "tortenelem",
+    difficulty: "nehez",
+    question: "Melyik békeszerződés zárta le Magyarország számára az első világháborút?",
+    answers: [
+        "Versailles-i béke",
+        "Trianoni békeszerződés",
+        "Saint-Germain-i béke",
+        "Párizsi béke"
+    ],
+    correct: 1
+},
+
+{
+    category: "tortenelem",
+    difficulty: "nehez",
+    question: "Melyik évben ért véget a második világháború Európában?",
+    answers: [
+        "1943",
+        "1944",
+        "1945",
+        "1946"
+    ],
+    correct: 2
+},
+
+{
+    category: "tortenelem",
+    difficulty: "nehez",
+    question: "Ki volt Magyarország kormányzója 1920 és 1944 között?",
+    answers: [
+        "Horthy Miklós",
+        "Teleki Pál",
+        "Bethlen István",
+        "Károlyi Mihály"
+    ],
+    correct: 0
+},
+
+{
+    category: "tortenelem",
+    difficulty: "nehez",
+    question: "Melyik évben kezdődött a második világháború?",
+    answers: [
+        "1937",
+        "1938",
+        "1939",
+        "1941"
+    ],
+    correct: 2
+},
+
+{
+    category: "tortenelem",
+    difficulty: "nehez",
+    question: "Melyik történelmi eseményhez kapcsolódik a Pákozdi csata?",
+    answers: [
+        "1848–49-es forradalom és szabadságharc",
+        "Rákóczi-szabadságharc",
+        "Mohácsi csata",
+        "Tatárjárás"
+    ],
+    correct: 0
+},
+
+{
+    category: "tortenelem",
+    difficulty: "nehez",
+    question: "Melyik évben zajlott a pozsonyi országgyűlés, amelyen Széchenyi István felajánlotta egyévi jövedelmét a Magyar Tudós Társaság számára?",
+    answers: [
+        "1825",
+        "1848",
+        "1867",
+        "1802"
+    ],
+    correct: 0
+},
 },
     },
 
