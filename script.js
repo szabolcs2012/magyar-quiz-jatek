@@ -1281,6 +1281,135 @@ const questions = [
             "12"
         ],
         correct: 1
+            {
+    category: "biologia",
+    difficulty: "konnyu",
+    question: "Melyik szerv felelős elsősorban a légzésért?",
+    answers: [
+        "Szív",
+        "Tüdő",
+        "Máj",
+        "Vese"
+    ],
+    correct: 1
+},
+
+{
+    category: "biologia",
+    difficulty: "konnyu",
+    question: "Hány szeme van általában egy embernek?",
+    answers: [
+        "1",
+        "2",
+        "3",
+        "4"
+    ],
+    correct: 1
+},
+
+{
+    category: "biologia",
+    difficulty: "konnyu",
+    question: "Melyik tápanyag ad gyorsan energiát a szervezetnek?",
+    answers: [
+        "Szénhidrát",
+        "Vitamin",
+        "Víz",
+        "Ásványi anyag"
+    ],
+    correct: 0
+},
+
+{
+    category: "biologia",
+    difficulty: "konnyu",
+    question: "Melyik testrész segítségével hallunk?",
+    answers: [
+        "Szem",
+        "Orr",
+        "Fül",
+        "Nyelv"
+    ],
+    correct: 2
+},
+
+{
+    category: "biologia",
+    difficulty: "konnyu",
+    question: "Melyik szerv tisztítja a vért és termeli a vizeletet?",
+    answers: [
+        "Tüdő",
+        "Vese",
+        "Szív",
+        "Gyomor"
+    ],
+    correct: 1
+},
+
+{
+    category: "biologia",
+    difficulty: "konnyu",
+    question: "Melyik állat emlős?",
+    answers: [
+        "Cápa",
+        "Béka",
+        "Delfin",
+        "Gyík"
+    ],
+    correct: 2
+},
+
+{
+    category: "biologia",
+    difficulty: "konnyu",
+    question: "Melyik növényi rész végzi főként a fotoszintézist?",
+    answers: [
+        "Gyökér",
+        "Levél",
+        "Virág",
+        "Termés"
+    ],
+    correct: 1
+},
+
+{
+    category: "biologia",
+    difficulty: "konnyu",
+    question: "Hány lába van egy rovarnak?",
+    answers: [
+        "4",
+        "6",
+        "8",
+        "10"
+    ],
+    correct: 1
+},
+
+{
+    category: "biologia",
+    difficulty: "konnyu",
+    question: "Melyik szerv emészti meg a táplálékot a gyomor után?",
+    answers: [
+        "Vékonybél",
+        "Tüdő",
+        "Vese",
+        "Szív"
+    ],
+    correct: 0
+},
+
+{
+    category: "biologia",
+    difficulty: "konnyu",
+    question: "Melyik vitamin képződését segíti a napfény?",
+    answers: [
+        "A-vitamin",
+        "C-vitamin",
+        "D-vitamin",
+        "K-vitamin"
+    ],
+    correct: 2
+},
     }
 
 ];
