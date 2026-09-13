@@ -190,7 +190,46 @@ function toggleCategory(button, category) {
 // =========================
 
 function startQuiz() {
+function selectDifficulty(difficulty) {
 
+    selectedDifficulty = difficulty;
+
+    // Csak a kiválasztott kategória ÉS nehézség kérdései
+    const availableQuestions = questions.filter(question =>
+        selectedCategories.includes(question.category) &&
+        question.difficulty === selectedDifficulty
+    );
+
+    if (availableQuestions.length === 0) {
+
+        alert("Ehhez a kategóriához és nehézséghez még nincs kérdés!");
+
+        return;
+    }
+
+    questionCount = Math.min(
+        questionCount,
+        availableQuestions.length
+    );
+
+    currentQuestionIndex = 0;
+    correctAnswers = 0;
+    wrongAnswers = 0;
+
+    window.gameQuestions = availableQuestions
+        .sort(() => Math.random() - 0.5)
+        .slice(0, questionCount);
+
+    document
+        .getElementById("difficulty-screen")
+        .classList.add("hidden");
+
+    document
+        .getElementById("quiz-screen")
+        .classList.remove("hidden");
+
+    showQuestion();
+}
     if (selectedCategories.length === 0) {
 
         alert("Kérlek, válassz legalább egy kategóriát!");
