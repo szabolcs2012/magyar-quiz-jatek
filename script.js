@@ -45,8 +45,10 @@ const questions = [
 
     // FÖLDRAJZ
     {
-        category: "foldrajz",
-        question: "Mi Magyarország fővárosa?",
+        {
+    category: "foldrajz",
+    difficulty: "konnyu",
+    question: "Mi Magyarország fővárosa?",
         answers: [
             "Debrecen",
             "Szeged",
