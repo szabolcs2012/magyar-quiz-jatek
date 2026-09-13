@@ -295,6 +295,135 @@ const questions = [
         "Ctrl + P"
     ],
     correct: 2
+    {
+    category: "informatika",
+    difficulty: "nehez",
+    question: "Melyik adatszerkezet működik LIFO elv alapján?",
+    answers: [
+        "Sor (queue)",
+        "Verem (stack)",
+        "Fa (tree)",
+        "Gráf (graph)"
+    ],
+    correct: 1
+},
+
+{
+    category: "informatika",
+    difficulty: "nehez",
+    question: "Mit jelent az O(n) jelölés az algoritmusoknál?",
+    answers: [
+        "A memória mérete fix",
+        "A futási idő lineárisan nő a bemenet méretével",
+        "Az algoritmus mindig konstans időben fut",
+        "Az algoritmus csak numerikus adatot kezel"
+    ],
+    correct: 1
+},
+
+{
+    category: "informatika",
+    difficulty: "nehez",
+    question: "Melyik adatbázis nyelvet használják relációs adatbázisok lekérdezésére?",
+    answers: [
+        "SQL",
+        "HTML",
+        "CSS",
+        "JSON"
+    ],
+    correct: 0
+},
+
+{
+    category: "informatika",
+    difficulty: "nehez",
+    question: "Mi a hash függvény egyik fontos tulajdonsága?",
+    answers: [
+        "Mindig visszaállíthatóvá teszi az eredeti adatot",
+        "Azonos bemenethez azonos hash értéket ad",
+        "Csak képeket tud feldolgozni",
+        "Mindig ugyanakkora bemenetet igényel"
+    ],
+    correct: 1
+},
+
+{
+    category: "informatika",
+    difficulty: "nehez",
+    question: "Melyik protokollt használják e-mailek küldésére?",
+    answers: [
+        "SMTP",
+        "FTP",
+        "DNS",
+        "SSH"
+    ],
+    correct: 0
+},
+
+{
+    category: "informatika",
+    difficulty: "nehez",
+    question: "Mi a tranzakció egyik alapvető tulajdonsága adatbázisban?",
+    answers: [
+        "Mindig törli az adatokat",
+        "Atomikus lehet",
+        "Csak olvasási műveletet végez",
+        "Nem lehet visszavonni"
+    ],
+    correct: 1
+},
+
+{
+    category: "informatika",
+    difficulty: "nehez",
+    question: "Melyik algoritmus alkalmas rendezett tömbben bináris keresésre?",
+    answers: [
+        "Buborékrendezés",
+        "Bináris keresés",
+        "Mélységi keresés",
+        "Lineáris keresés"
+    ],
+    correct: 1
+},
+
+{
+    category: "informatika",
+    difficulty: "nehez",
+    question: "Melyik hálózati réteghez kapcsolódik az IP protokoll az OSI-modellben?",
+    answers: [
+        "Alkalmazási réteg",
+        "Szállítási réteg",
+        "Hálózati réteg",
+        "Fizikai réteg"
+    ],
+    correct: 2
+},
+
+{
+    category: "informatika",
+    difficulty: "nehez",
+    question: "Mit jelent a virtualizáció?",
+    answers: [
+        "Csak fájlok titkosítását",
+        "Virtuális erőforrások vagy gépek létrehozását fizikai erőforrásokon",
+        "A monitor felbontásának növelését",
+        "Az internet sebességének növelését"
+    ],
+    correct: 1
+},
+
+{
+    category: "informatika",
+    difficulty: "nehez",
+    question: "Melyik memóriatípus veszti el tartalmát a számítógép kikapcsolásakor?",
+    answers: [
+        "SSD",
+        "ROM",
+        "RAM",
+        "Flash memória"
+    ],
+    correct: 2
+},
 },
 },
     },
