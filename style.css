@@ -50,9 +50,7 @@ body {
 
 .screen p {
     margin-bottom: 15px;
-
     font-size: 18px;
-
     color: #444;
 }
 
@@ -136,7 +134,6 @@ button:disabled {
 
 .question-buttons {
     display: flex;
-
     flex-direction: column;
 }
 
@@ -151,7 +148,6 @@ button:disabled {
 
 .categories {
     display: flex;
-
     flex-direction: column;
 }
 
@@ -161,7 +157,6 @@ button:disabled {
 
 .categories button.selected {
     background: #4caf50;
-
     color: white;
 
     box-shadow:
@@ -175,7 +170,6 @@ button:disabled {
 
 .difficulty-buttons {
     display: flex;
-
     flex-direction: column;
 }
 
@@ -190,7 +184,6 @@ button:disabled {
 
 #answers {
     display: flex;
-
     flex-direction: column;
 
     gap: 10px;
@@ -200,7 +193,6 @@ button:disabled {
 
 #answers button {
     width: 100%;
-
     margin: 0;
 }
 
@@ -211,7 +203,6 @@ button:disabled {
 
 .correct {
     background-color: #4caf50 !important;
-
     color: white !important;
 
     box-shadow:
@@ -225,7 +216,6 @@ button:disabled {
 
 .wrong {
     background-color: #f44336 !important;
-
     color: white !important;
 
     box-shadow:
@@ -273,5 +263,14 @@ button:disabled {
 
 /* =========================
    PONTSZÁM
-   ===========
+   ========================= */
+
+#score {
+    margin-top: 25px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+/* ==========*
 ```
