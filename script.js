@@ -88,8 +88,10 @@ const questions = [
     },
 
     {
-        category: "tortenelem",
-        question: "Ki volt Magyarország első királya?",
+        {
+    category: "tortenelem",
+    difficulty: "konnyu",
+    question: "Ki volt Magyarország első királya?",
         answers: [
             "Mátyás király",
             "IV. Béla",
