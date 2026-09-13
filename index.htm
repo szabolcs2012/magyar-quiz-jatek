@@ -9,6 +9,16 @@
     <title>Kvíz Játék</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- =========================
+         EMAILJS
+         ========================= -->
+
+    <script
+        type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+
 </head>
 
 <body>
@@ -140,141 +150,5 @@
     </div>
 
 
-    <!-- =========================
-         KVÍZ KÉPERNYŐ
-         ========================= -->
-
-    <div id="quiz-screen" class="screen hidden">
-
-        <h2 id="question-number">
-            1 / 30
-        </h2>
-
-        <h1 id="question-text">
-            Kérdés helye
-        </h1>
-
-        <div id="answers">
-
-            <button>
-                Válasz A
-            </button>
-
-            <button>
-                Válasz B
-            </button>
-
-            <button>
-                Válasz C
-            </button>
-
-            <button>
-                Válasz D
-            </button>
-
-        </div>
-
-        <p id="score">
-            ✅ Helyes: 0 |
-            ❌ Helytelen: 0
-        </p>
-
-    </div>
-
-
-    <!-- =========================
-         LEADERBOARD
-         ========================= -->
-
-    <div id="leaderboard-screen" class="screen hidden">
-
-        <h1>🏆 Leaderboard</h1>
-
-        <p>
-            A már játszott játékosok eredményei
-        </p>
-
-        <div id="leaderboard-list">
-            <!-- A JavaScript tölti fel -->
-        </div>
-
-        <button onclick="backToStart()">
-            ⬅️ Vissza
-        </button>
-
-    </div>
-
-
-    <!-- =========================
-         LEVÉL / MEGJEGYZÉS
-         ========================= -->
-
-    <div id="letter-overlay" class="letter-overlay hidden">
-
-        <div class="envelope-container">
-
-            <div id="envelope" class="envelope">
-
-                <!-- Boríték hátulja -->
-                <div class="envelope-back"></div>
-
-
-                <!-- Levél -->
-                <div class="letter">
-
-                    <div class="letter-content">
-
-                        <h2>
-                            💌 Kedves Kvíz játékos!!!
-                        </h2>
-
-                        <p>
-                            Ha tetszik a játék vagy hasonló ötleteid vannak,
-                            akkor írd be a megjegyzésbe, és ha nem,
-                            akkor írd le, hogy mit kéne változtatni rajta!
-                        </p>
-
-                        <textarea
-                            id="player-comment"
-                            rows="10"
-                            maxlength="1000"
-                            placeholder="Ide írd a megjegyzésed..."
-                        ></textarea>
-
-                        <button onclick="saveComment()">
-                            💾 Megjegyzés mentése
-                        </button>
-
-                        <button onclick="skipComment()">
-                            ➡️ Tovább
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Boríték eleje -->
-                <div class="envelope-front"></div>
-
-
-                <!-- Boríték hajtóka -->
-                <div class="envelope-flap"></div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- =========================
-         JAVASCRIPT
-         ========================= -->
-
-    <script src="script.js"></script>
-
-</body>
-
-</html>
+    <!--
 ```
