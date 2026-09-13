@@ -3,10 +3,44 @@
 // EMAILJS BEÁLLÍTÁS
 // =========================
 
-// IDE fogjuk beírni az EmailJS adataidat
 const EMAILJS_PUBLIC_KEY = "IDE_JON_A_PUBLIC_KEY";
 const EMAILJS_SERVICE_ID = "IDE_JON_A_SERVICE_ID";
 const EMAILJS_TEMPLATE_ID = "IDE_JON_A_TEMPLATE_ID";
+
+
+// =========================
+// JÁTÉK VÁLTOZÓK
+// =========================
+
+let playerName = "";
+let questionCount = 0;
+let selectedCategories = [];
+let selectedDifficulty = "";
+
+let currentQuestionIndex = 0;
+let correctAnswers = 0;
+let wrongAnswers = 0;
+
+
+// =========================
+// KÉPERNYŐ VÁLTÁS
+// =========================
+
+function showScreen(screenId) {
+
+    const screens = document.querySelectorAll(".screen");
+
+    screens.forEach(function (screen) {
+        screen.classList.add("hidden");
+    });
+
+    const selectedScreen =
+        document.getElementById(screenId);
+
+    if (selectedScreen) {
+        selectedScreen.classList.remove("hidden");
+    }
+}
 
 
 // =========================
@@ -15,7 +49,6 @@ const EMAILJS_TEMPLATE_ID = "IDE_JON_A_TEMPLATE_ID";
 
 window.addEventListener("DOMContentLoaded", function () {
 
-    // Név betöltése
     const savedName =
         localStorage.getItem("quizPlayerName");
 
@@ -31,7 +64,6 @@ window.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // EmailJS indítása
     if (
         typeof emailjs !== "undefined" &&
         EMAILJS_PUBLIC_KEY !== "IDE_JON_A_PUBLIC_KEY"
@@ -40,28 +72,53 @@ window.addEventListener("DOMContentLoaded", function () {
             publicKey: EMAILJS_PUBLIC_KEY
         });
     }
+
 });
 
 
 // =========================
-// MEGJEGYZÉS MENTÉSE + E-MAIL
+// KEZDÉS
 // =========================
 
-async function saveComment() {
+function startGame() {
 
-    const commentBox =
-        document.getElementById("player-comment");
+    const nameInput =
+        document.getElementById("player-name");
 
-    const comment =
-        commentBox.value.trim();
+    const name =
+        nameInput.value.trim();
 
-    if (comment === "") {
+    if (name === "") {
 
-        alert("Kérlek, írj be egy megjegyzést!");
+        alert("Kérlek, írd be a neved!");
+
+        nameInput.focus();
 
         return;
     }
 
-    // Helyi mentés
-    const comment
+    playerName = name;
+
+    localStorage.setItem(
+        "quizPlayerName",
+        playerName
+    );
+
+    // KEZDÉS UTÁN → KÉRDÉSSZÁM
+    showScreen("question-count-screen");
+}
+
+
+// =========================
+// KÉRDÉSSZÁM KIVÁLASZTÁSA
+// =========================
+
+function selectQuestionCount(count) {
+
+    questionCount = count;
+
+    // Új játékhoz töröljük a korábbi kategóriákat
+    selectedCategories = [];
+
+    // KATEGÓRIA KÉPERN
 ```
