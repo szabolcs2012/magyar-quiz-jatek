@@ -1,4 +1,4 @@
-```js
+
 // =========================
 // EMAILJS BEÁLLÍTÁS
 // =========================
@@ -20,7 +20,6 @@ let selectedDifficulty = "";
 let currentQuestionIndex = 0;
 let correctAnswers = 0;
 let wrongAnswers = 0;
-
 let quizQuestions = [];
 
 
@@ -36,7 +35,8 @@ function showScreen(screenId) {
         screen.classList.add("hidden");
     });
 
-    const selectedScreen = document.getElementById(screenId);
+    const selectedScreen =
+        document.getElementById(screenId);
 
     if (selectedScreen) {
         selectedScreen.classList.remove("hidden");
@@ -45,18 +45,20 @@ function showScreen(screenId) {
 
 
 // =========================
-// EMAILJS INDÍTÁSA
+// OLDAL BETÖLTÉSE
 // =========================
 
 window.addEventListener("DOMContentLoaded", function () {
 
-    const savedName = localStorage.getItem("quizPlayerName");
+    const savedName =
+        localStorage.getItem("quizPlayerName");
 
     if (savedName) {
 
         playerName = savedName;
 
-        const nameInput = document.getElementById("player-name");
+        const nameInput =
+            document.getElementById("player-name");
 
         if (nameInput) {
             nameInput.value = savedName;
@@ -72,7 +74,7 @@ window.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Biztosan csak a kezdőképernyő jelenjen meg induláskor
+    // Csak a kezdőképernyő jelenjen meg
     showScreen("start-screen");
 });
 
@@ -83,13 +85,11 @@ window.addEventListener("DOMContentLoaded", function () {
 
 function startGame() {
 
-    const nameInput = document.getElementById("player-name");
+    const nameInput =
+        document.getElementById("player-name");
 
-    if (!nameInput) {
-        return;
-    }
-
-    const name = nameInput.value.trim();
+    const name =
+        nameInput.value.trim();
 
     if (name === "") {
 
@@ -118,13 +118,18 @@ function startGame() {
 
 function selectQuestionCount(count) {
 
-    questionCount = count;
+    questionCount = Number(count);
 
-    // Új játékhoz töröljük a korábbi választásokat
+    // Új játék
     selectedCategories = [];
     selectedDifficulty = "";
 
-    // KATEGÓRIA
+    currentQuestionIndex = 0;
+    correctAnswers = 0;
+    wrongAnswers = 0;
+    quizQuestions = [];
+
+    // KÉRDÉSSZÁM → KATEGÓRIA
     showScreen("category-screen");
 }
 
@@ -135,7 +140,8 @@ function selectQuestionCount(count) {
 
 function toggleCategory(category) {
 
-    const index = selectedCategories.indexOf(category);
+    const index =
+        selectedCategories.indexOf(category);
 
     if (index === -1) {
 
@@ -146,47 +152,28 @@ function toggleCategory(category) {
         selectedCategories.splice(index, 1);
     }
 
-    // Gombok színének frissítése
-    const buttons = document.querySelectorAll(
-        "#category-buttons button"
-    );
+    // Gombok színezése
+    const buttons =
+        document.querySelectorAll("#category-buttons button");
 
     buttons.forEach(function (button) {
 
-        button.classList.remove("selected");
+        const onclickText =
+            button.getAttribute("onclick") || "";
 
-        const onclickText = button.getAttribute("onclick");
+        const match =
+            onclickText.match(/'([^']+)'/);
+
+        const buttonCategory =
+            match ? match[1] : "";
 
         if (
-            onclickText &&
-            onclickText.includes("'" + category + "'") &&
-            selectedCategories.includes(category)
+            selectedCategories.includes(buttonCategory)
         ) {
             button.classList.add("selected");
+        } else {
+            button.classList.remove("selected");
         }
-    });
-
-    // Biztosabb megoldás: minden kategóriagomb állapotának frissítése
-    buttons.forEach(function (button) {
-
-        const onclickText = button.getAttribute("onclick");
-
-        if (!onclickText) {
-            return;
-        }
-
-        selectedCategories.forEach(function (selectedCategory) {
-
-            if (
-                onclickText.includes(
-                    "'" + selectedCategory + "'"
-                )
-            ) {
-                button.classList.add("selected");
-            }
-
-        });
-
     });
 }
 
@@ -204,7 +191,6 @@ function startQuiz() {
         return;
     }
 
-    // KATEGÓRIA → NEHÉZSÉG
     showScreen("difficulty-screen");
 }
 
@@ -217,35 +203,33 @@ function selectDifficulty(difficulty) {
 
     selectedDifficulty = difficulty;
 
-    currentQuestionIndex = 0;
-    correctAnswers = 0;
-    wrongAnswers = 0;
-
-    // A questions tömbből kiválogatjuk
-    // a kiválasztott kategóriát és nehézséget
-    if (typeof questions === "undefined") {
+    // Ellenőrizzük, hogy léteznek-e kérdések
+    if (
+        typeof questions === "undefined" ||
+        !Array.isArray(questions)
+    ) {
 
         alert(
-            "Hiba: a questions tömb nem található a script.js fájlban!"
+            "Hiba: a kérdések nem találhatók a script.js fájlban!"
         );
 
         return;
     }
 
+    // Kérdések szűrése
     quizQuestions = questions.filter(function (question) {
 
         return (
             selectedCategories.includes(question.category) &&
             question.difficulty === selectedDifficulty
         );
-
     });
 
     // Ha nincs elég kérdés
     if (quizQuestions.length === 0) {
 
         alert(
-            "Nincs kérdés ehhez a kategória + nehézség kombinációhoz."
+            "Ebben a kategóriában nincs ilyen nehézségű kérdés."
         );
 
         return;
@@ -256,14 +240,25 @@ function selectDifficulty(difficulty) {
         return Math.random() - 0.5;
     });
 
-    // A kiválasztott kérdésszámot használjuk,
-    // de nem lépjük túl a rendelkezésre álló kérdéseket.
-    quizQuestions = quizQuestions.slice(
-        0,
-        questionCount
-    );
+    // A kiválasztott mennyiség
+    quizQuestions =
+        quizQuestions.slice(0, questionCount);
 
-    // KVÍZ
+    currentQuestionIndex = 0;
+    correctAnswers = 0;
+    wrongAnswers = 0;
+
+    // Ha kevesebb kérdés van, jelezzük
+    if (quizQuestions.length < questionCount) {
+
+        alert(
+            "Ehhez a választáshoz csak " +
+            quizQuestions.length +
+            " kérdés áll rendelkezésre."
+        );
+    }
+
+    // Kvíz indítása
     showScreen("quiz-screen");
 
     showQuestion();
@@ -276,10 +271,10 @@ function selectDifficulty(difficulty) {
 
 function showQuestion() {
 
-    if (currentQuestionIndex >= quizQuestions.length) {
-
+    if (
+        currentQuestionIndex >= quizQuestions.length
+    ) {
         finishQuiz();
-
         return;
     }
 
@@ -295,53 +290,42 @@ function showQuestion() {
     const answersContainer =
         document.getElementById("answers");
 
-    const score =
+    const scoreElement =
         document.getElementById("score");
 
-    if (questionNumber) {
+    questionNumber.textContent =
+        "Kérdés " +
+        (currentQuestionIndex + 1) +
+        " / " +
+        quizQuestions.length;
 
-        questionNumber.textContent =
-            "Kérdés " +
-            (currentQuestionIndex + 1) +
-            " / " +
-            quizQuestions.length;
-    }
+    questionText.textContent =
+        currentQuestion.question;
 
-    if (questionText) {
-
-        questionText.textContent =
-            currentQuestion.question;
-    }
-
-    if (score) {
-
-        score.textContent =
-            "Pontszám: " +
-            correctAnswers +
-            " / " +
-            (currentQuestionIndex);
-    }
-
-    if (!answersContainer) {
-        return;
-    }
+    scoreElement.textContent =
+        "Pontszám: " +
+        correctAnswers;
 
     answersContainer.innerHTML = "";
 
-    currentQuestion.answers.forEach(function (answer, index) {
+    currentQuestion.answers.forEach(
+        function (answer, index) {
 
-        const button =
-            document.createElement("button");
+            const button =
+                document.createElement("button");
 
-        button.textContent = answer;
+            button.textContent = answer;
 
-        button.onclick = function () {
-            checkAnswer(index, button);
-        };
+            button.addEventListener(
+                "click",
+                function () {
+                    checkAnswer(index, button);
+                }
+            );
 
-        answersContainer.appendChild(button);
-
-    });
+            answersContainer.appendChild(button);
+        }
+    );
 }
 
 
@@ -349,65 +333,53 @@ function showQuestion() {
 // VÁLASZ ELLENŐRZÉSE
 // =========================
 
-function checkAnswer(answerIndex, clickedButton) {
+function checkAnswer(selectedAnswer, clickedButton) {
 
     const currentQuestion =
         quizQuestions[currentQuestionIndex];
 
-    const buttons =
+    const answerButtons =
         document.querySelectorAll("#answers button");
 
-    // Ne lehessen többször válaszolni
-    buttons.forEach(function (button) {
+    // Ne lehessen többször kattintani
+    answerButtons.forEach(function (button) {
         button.disabled = true;
     });
 
-    if (answerIndex === currentQuestion.correct) {
+    if (selectedAnswer === currentQuestion.correct) {
 
-        correctAnswers++;
-
+        // HELYES
         clickedButton.classList.add("correct");
         clickedButton.classList.add("flash");
 
+        correctAnswers++;
+
     } else {
+
+        // HIBÁS
+        clickedButton.classList.add("wrong");
 
         wrongAnswers++;
 
-        clickedButton.classList.add("wrong");
-
-        // Helyes válasz megmutatása
-        buttons.forEach(function (button, index) {
+        // A helyes válasz zöld legyen
+        answerButtons.forEach(function (button, index) {
 
             if (index === currentQuestion.correct) {
 
                 button.classList.add("correct");
                 button.classList.add("flash");
-
             }
-
         });
     }
 
-    const score =
-        document.getElementById("score");
-
-    if (score) {
-
-        score.textContent =
-            "Pontszám: " +
-            correctAnswers +
-            " / " +
-            (currentQuestionIndex + 1);
-    }
-
-    // Kis várakozás után következő kérdés
+    // Következő kérdés
     setTimeout(function () {
 
         currentQuestionIndex++;
 
         showQuestion();
 
-    }, 1600);
+    }, 1500);
 }
 
 
@@ -417,34 +389,36 @@ function checkAnswer(answerIndex, clickedButton) {
 
 function finishQuiz() {
 
+    saveLeaderboard();
+
     const total =
         quizQuestions.length;
 
     const percentage =
         total > 0
-            ? Math.round(
-                (correctAnswers / total) * 100
-            )
+            ? Math.round((correctAnswers / total) * 100)
             : 0;
 
-    saveLeaderboard(
-        playerName,
-        correctAnswers,
-        total
-    );
-
     alert(
-        "🎉 Vége a kvíznek!\n\n" +
-        "Helyes válaszok: " +
-        correctAnswers +
-        "\nHibás válaszok: " +
-        wrongAnswers +
-        "\nEredmény: " +
-        percentage +
-        "%"
+        "🎉 Kvíz vége!\n\n" +
+        "Játékos: " + playerName + "\n" +
+        "Helyes válaszok: " + correctAnswers + "\n" +
+        "Hibás válaszok: " + wrongAnswers + "\n" +
+        "Eredmény: " + percentage + "%"
     );
 
-    showLeaderboard();
+    // Levél megnyitása
+    const letterOverlay =
+        document.getElementById("letter-overlay");
+
+    if (letterOverlay) {
+
+        letterOverlay.classList.remove("hidden");
+
+        setTimeout(function () {
+            letterOverlay.classList.add("animate");
+        }, 100);
+    }
 }
 
 
@@ -452,32 +426,36 @@ function finishQuiz() {
 // LEADERBOARD MENTÉSE
 // =========================
 
-function saveLeaderboard(name, score, total) {
+function saveLeaderboard() {
 
-    let leaderboard =
+    const leaderboard =
         JSON.parse(
             localStorage.getItem("quizLeaderboard") || "[]"
         );
 
     leaderboard.push({
-        name: name,
-        score: score,
-        total: total,
+
+        name: playerName,
+
+        score: correctAnswers,
+
+        total: quizQuestions.length,
+
         date: new Date().toLocaleString("hu-HU")
     });
 
+    // Legjobb eredmények elöl
     leaderboard.sort(function (a, b) {
-
         return b.score - a.score;
-
     });
 
-    leaderboard =
-        leaderboard.slice(0, 10);
+    // Csak a legjobb 20 maradjon
+    const topResults =
+        leaderboard.slice(0, 20);
 
     localStorage.setItem(
         "quizLeaderboard",
-        JSON.stringify(leaderboard)
+        JSON.stringify(topResults)
     );
 }
 
@@ -491,43 +469,45 @@ function showLeaderboard() {
     const list =
         document.getElementById("leaderboard-list");
 
-    if (!list) {
-        return;
-    }
+    list.innerHTML = "";
 
     const leaderboard =
         JSON.parse(
             localStorage.getItem("quizLeaderboard") || "[]"
         );
 
-    list.innerHTML = "";
-
     if (leaderboard.length === 0) {
 
         list.innerHTML =
             "<p>Még nincs eredmény.</p>";
 
-    } else {
+        showScreen("leaderboard-screen");
 
-        leaderboard.forEach(function (entry, index) {
-
-            const row =
-                document.createElement("p");
-
-            row.textContent =
-                (index + 1) +
-                ". " +
-                entry.name +
-                " — " +
-                entry.score +
-                " / " +
-                entry.total;
-
-            list.appendChild(row);
-
-        });
-
+        return;
     }
+
+    leaderboard.forEach(function (item, index) {
+
+        const entry =
+            document.createElement("div");
+
+        entry.innerHTML =
+            "<strong>" +
+            (index + 1) +
+            ". " +
+            item.name +
+            "</strong><br>" +
+            "🏆 " +
+            item.score +
+            " / " +
+            item.total +
+            "<br>" +
+            "<small>" +
+            item.date +
+            "</small>";
+
+        list.appendChild(entry);
+    });
 
     showScreen("leaderboard-screen");
 }
@@ -539,79 +519,93 @@ function showLeaderboard() {
 
 function closeLetter() {
 
-    const overlay =
+    const letterOverlay =
         document.getElementById("letter-overlay");
 
-    if (overlay) {
+    if (letterOverlay) {
 
-        overlay.classList.add("hidden");
+        letterOverlay.classList.remove("animate");
+
+        setTimeout(function () {
+
+            letterOverlay.classList.add("hidden");
+
+            // Vissza a kezdőképernyőre
+            showScreen("start-screen");
+
+        }, 300);
     }
 }
 
 
 // =========================
-// MEGJEGYZÉS KÜLDÉSE
+// MEGJEGYZÉS / EMAILJS
 // =========================
 
-async function saveComment() {
+function saveComment() {
 
-    const commentBox =
+    const commentElement =
         document.getElementById("player-comment");
 
-    if (!commentBox) {
-        return;
-    }
-
     const comment =
-        commentBox.value.trim();
+        commentElement.value.trim();
 
     if (comment === "") {
 
-        alert(
-            "Kérlek, írj be egy megjegyzést!"
-        );
+        alert("Kérlek, írj egy megjegyzést!");
 
         return;
     }
 
-    // Ha az EmailJS még nincs beállítva
+    // EmailJS nincs még beállítva
     if (
+        typeof emailjs === "undefined" ||
         EMAILJS_PUBLIC_KEY === "IDE_JON_A_PUBLIC_KEY" ||
         EMAILJS_SERVICE_ID === "IDE_JON_A_SERVICE_ID" ||
         EMAILJS_TEMPLATE_ID === "IDE_JON_A_TEMPLATE_ID"
     ) {
 
         alert(
-            "Az EmailJS még nincs beállítva."
+            "A megjegyzés elkészült, de az EmailJS még nincs beállítva."
+        );
+
+        localStorage.setItem(
+            "lastQuizComment",
+            comment
         );
 
         return;
     }
 
-    try {
+    const templateParams = {
 
-        await emailjs.send(
-            EMAILJS_SERVICE_ID,
-            EMAILJS_TEMPLATE_ID,
-            {
-                player_name: playerName,
-                message: comment
-            }
-        );
+        player_name: playerName,
 
-        alert(
-            "✅ Köszönöm a megjegyzést!"
-        );
+        message: comment,
 
-        commentBox.value = "";
+        score: correctAnswers,
 
-    } catch (error) {
+        total_questions: quizQuestions.length
+    };
+
+    emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams
+    )
+    .then(function () {
+
+        alert("✅ A megjegyzés elküldve!");
+
+        commentElement.value = "";
+
+    })
+    .catch(function (error) {
 
         console.error(error);
 
         alert(
             "❌ Nem sikerült elküldeni a megjegyzést."
         );
-    }
+    });
 }
-```
