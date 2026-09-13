@@ -709,6 +709,135 @@ const questions = [
         "Tunézia"
     ],
     correct: 1
+            {
+    category: "foldrajz",
+    difficulty: "nehez",
+    question: "Melyik országban található a Föld legmélyebb tava, a Bajkál-tó?",
+    answers: [
+        "Kazahsztán",
+        "Oroszország",
+        "Mongólia",
+        "Kína"
+    ],
+    correct: 1
+},
+
+{
+    category: "foldrajz",
+    difficulty: "nehez",
+    question: "Melyik ország területén található a Kalahári-sivatag jelentős része?",
+    answers: [
+        "Botswana",
+        "Marokkó",
+        "Egyiptom",
+        "Etiópia"
+    ],
+    correct: 0
+},
+
+{
+    category: "foldrajz",
+    difficulty: "nehez",
+    question: "Melyik tengerszoros választja el Európát Afrikától?",
+    answers: [
+        "Boszporusz",
+        "Gibraltári-szoros",
+        "Bering-szoros",
+        "Dardanellák"
+    ],
+    correct: 1
+},
+
+{
+    category: "foldrajz",
+    difficulty: "nehez",
+    question: "Melyik országban található a Pamír-hegység jelentős része?",
+    answers: [
+        "Tádzsikisztán",
+        "Görögország",
+        "Mexikó",
+        "Chile"
+    ],
+    correct: 0
+},
+
+{
+    category: "foldrajz",
+    difficulty: "nehez",
+    question: "Melyik folyó szeli át Egyiptomot és torkollik a Földközi-tengerbe?",
+    answers: [
+        "Kongó",
+        "Nílus",
+        "Zambézi",
+        "Niger"
+    ],
+    correct: 1
+},
+
+{
+    category: "foldrajz",
+    difficulty: "nehez",
+    question: "Melyik országban található a Salar de Uyuni, a világ egyik legnagyobb sómezeje?",
+    answers: [
+        "Peru",
+        "Bolívia",
+        "Chile",
+        "Argentína"
+    ],
+    correct: 1
+},
+
+{
+    category: "foldrajz",
+    difficulty: "nehez",
+    question: "Melyik éghajlati övben található a tundra?",
+    answers: [
+        "Egyenlítői öv",
+        "Mérsékelt öv",
+        "Hideg öv",
+        "Forró öv"
+    ],
+    correct: 2
+},
+
+{
+    category: "foldrajz",
+    difficulty: "nehez",
+    question: "Melyik ország fővárosa Ulaanbaatar?",
+    answers: [
+        "Mongólia",
+        "Üzbegisztán",
+        "Kirgizisztán",
+        "Kazahsztán"
+    ],
+    correct: 0
+},
+
+{
+    category: "foldrajz",
+    difficulty: "nehez",
+    question: "Melyik óceáni áramlat melegíti Nyugat-Európa éghajlatát?",
+    answers: [
+        "Labrador-áramlás",
+        "Golf-áramlás",
+        "Perui-áramlás",
+        "Benguela-áramlás"
+    ],
+    correct: 1
+},
+
+{
+    category: "foldrajz",
+    difficulty: "nehez",
+    question: "Melyik országban található a Cotopaxi vulkán?",
+    answers: [
+        "Ecuador",
+        "Brazília",
+        "Kolumbia",
+        "Peru"
+    ],
+    correct: 0
+},
 },
 },
     },
