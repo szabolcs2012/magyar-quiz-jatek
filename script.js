@@ -103,8 +103,10 @@ const questions = [
 
     // BIOLÓGIA
     {
-        category: "biologia",
-        question: "Melyik szerv pumpálja a vért?",
+        {
+    category: "biologia",
+    difficulty: "konnyu",
+    question: "Melyik szerv pumpálja a vért?",
         answers: [
             "Tüdő",
             "Szív",
