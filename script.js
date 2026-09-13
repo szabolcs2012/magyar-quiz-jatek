@@ -30,8 +30,10 @@ const questions = [
     },
 
     {
-        category: "informatika",
-        question: "Melyik eszköz használható adatok tárolására?",
+       {
+    category: "informatika",
+    difficulty: "konnyu",
+    question: "Melyik eszköz használható adatok tárolására?",
         answers: [
             "SSD",
             "Monitor",
