@@ -9,71 +9,7 @@
 </head>
 
 <body>
-<!-- KATEGÓRIA VÁLASZTÁS -->
-<div id="category-screen" class="screen hidden">
-<!-- KATEGÓRIA VÁLASZTÁS -->
-<div id="category-screen" class="screen hidden">
-    <!-- ide jönnek a kategóriák -->
-    
-    <button onclick="startQuiz()">Kvíz indítása</button>
-</div>
 
-
-<!-- NEHÉZSÉG VÁLASZTÁS -->
-<div id="difficulty-screen" class="screen hidden">
-    <h1>🎯 Válassz nehézséget!</h1>
-
-    <p>Milyen nehézségű kérdéseket szeretnél?</p>
-
-    <div class="difficulty-buttons">
-        <button onclick="selectDifficulty('konnyu')">
-            🟢 Könnyű
-        </button>
-
-        <button onclick="selectDifficulty('kozepes')">
-            🟡 Közepes
-        </button>
-
-        <button onclick="selectDifficulty('nehez')">
-            🔴 Nehéz
-        </button>
-    </div>
-</div>
-
-
-<!-- KVÍZ -->
-<div id="quiz-screen" class="screen hidden">
-    <!-- kérdések -->
-</div>
-    <h1>📚 Válassz kategóriát!</h1>
-
-    <p>Válaszd ki, milyen témákból szeretnél kérdéseket.</p>
-
-    <div class="categories">
-
-        <button onclick="toggleCategory(this, 'informatika')">
-            💻 Informatika
-        </button>
-
-        <button onclick="toggleCategory(this, 'foldrajz')">
-            🌍 Földrajz
-        </button>
-
-        <button onclick="toggleCategory(this, 'tortenelem')">
-            📜 Történelem
-        </button>
-
-        <button onclick="toggleCategory(this, 'biologia')">
-            🧬 Biológia
-        </button>
-
-    </div>
-
-    <button onclick="startQuiz()">
-        Kvíz indítása 🚀
-    </button>
-
-</div>
     <!-- KEZDŐKÉPERNYŐ -->
     <div id="start-screen" class="screen">
         <h1>🧠 Kvíz Játék</h1>
@@ -104,27 +40,92 @@
         </div>
     </div>
 
-<!-- 4. KVÍZ KÉPERNYŐ -->
-<div id="quiz-screen" class="screen hidden">
 
-    <h2 id="question-number">1 / 30</h2>
+    <!-- KATEGÓRIA VÁLASZTÁS -->
+    <div id="category-screen" class="screen hidden">
 
-    <h1 id="question-text">
-        Kérdés helye
-    </h1>
+        <h1>📚 Válassz kategóriát!</h1>
 
-    <div id="answers">
-        <button>Válasz A</button>
-        <button>Válasz B</button>
-        <button>Válasz C</button>
-        <button>Válasz D</button>
+        <p>Válaszd ki, milyen témákból szeretnél kérdéseket.</p>
+
+        <div class="categories">
+
+            <button onclick="toggleCategory(this, 'informatika')">
+                💻 Informatika
+            </button>
+
+            <button onclick="toggleCategory(this, 'foldrajz')">
+                🌍 Földrajz
+            </button>
+
+            <button onclick="toggleCategory(this, 'tortenelem')">
+                📜 Történelem
+            </button>
+
+            <button onclick="toggleCategory(this, 'biologia')">
+                🧬 Biológia
+            </button>
+
+        </div>
+
+        <button onclick="startQuiz()">
+            Kvíz indítása 🚀
+        </button>
+
     </div>
 
-    <p id="score">
-        ✅ Helyes: 0 | ❌ Helytelen: 0
-    </p>
 
-</div>
+    <!-- NEHÉZSÉG VÁLASZTÁS -->
+    <div id="difficulty-screen" class="screen hidden">
+
+        <h1>🎯 Válassz nehézséget!</h1>
+
+        <p>Milyen nehézségű kérdéseket szeretnél?</p>
+
+        <div class="difficulty-buttons">
+
+            <button onclick="selectDifficulty('konnyu')">
+                🟢 Könnyű
+            </button>
+
+            <button onclick="selectDifficulty('kozepes')">
+                🟡 Közepes
+            </button>
+
+            <button onclick="selectDifficulty('nehez')">
+                🔴 Nehéz
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- KVÍZ KÉPERNYŐ -->
+    <div id="quiz-screen" class="screen hidden">
+
+        <h2 id="question-number">1 / 30</h2>
+
+        <h1 id="question-text">
+            Kérdés helye
+        </h1>
+
+        <div id="answers">
+
+            <button>Válasz A</button>
+            <button>Válasz B</button>
+            <button>Válasz C</button>
+            <button>Válasz D</button>
+
+        </div>
+
+        <p id="score">
+            ✅ Helyes: 0 | ❌ Helytelen: 0
+        </p>
+
+    </div>
+
+
     <script src="script.js"></script>
 
 </body>
