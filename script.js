@@ -167,6 +167,135 @@ const questions = [
         "Ctrl + Z"
     ],
     correct: 2
+    {
+    category: "informatika",
+    difficulty: "kozepes",
+    question: "Melyik fájlkiterjesztés tartozik általában egy JavaScript fájlhoz?",
+    answers: [
+        ".css",
+        ".js",
+        ".jpg",
+        ".html"
+    ],
+    correct: 1
+},
+
+{
+    category: "informatika",
+    difficulty: "kozepes",
+    question: "Mit jelent az URL rövidítés?",
+    answers: [
+        "Universal Resource Locator",
+        "User Remote Link",
+        "Universal Read Language",
+        "United Resource List"
+    ],
+    correct: 0
+},
+
+{
+    category: "informatika",
+    difficulty: "kozepes",
+    question: "Melyik protokollt használják általában weboldalak biztonságos elérésére?",
+    answers: [
+        "FTP",
+        "HTTP",
+        "HTTPS",
+        "SMTP"
+    ],
+    correct: 2
+},
+
+{
+    category: "informatika",
+    difficulty: "kozepes",
+    question: "Melyik komponens végzi a számítási műveletek nagy részét?",
+    answers: [
+        "CPU",
+        "Monitor",
+        "Billentyűzet",
+        "Tápegység"
+    ],
+    correct: 0
+},
+
+{
+    category: "informatika",
+    difficulty: "kozepes",
+    question: "Mire szolgál a DNS?",
+    answers: [
+        "Webcímeket kapcsol IP-címekhez",
+        "Fájlokat tömörít",
+        "Képeket szerkeszt",
+        "Zenét játszik le"
+    ],
+    correct: 0
+},
+
+{
+    category: "informatika",
+    difficulty: "kozepes",
+    question: "Melyik programozási nyelvet futtatják közvetlenül a böngészők weboldalakon?",
+    answers: [
+        "JavaScript",
+        "C++",
+        "Python",
+        "Java"
+    ],
+    correct: 0
+},
+
+{
+    category: "informatika",
+    difficulty: "kozepes",
+    question: "Mit jelent a HTML rövidítés?",
+    answers: [
+        "HyperText Markup Language",
+        "HighText Machine Language",
+        "Home Tool Markup Language",
+        "Hyperlink Text Management Language"
+    ],
+    correct: 0
+},
+
+{
+    category: "informatika",
+    difficulty: "kozepes",
+    question: "Melyik memória tárol adatokat ideiglenesen a programok futtatásakor?",
+    answers: [
+        "SSD",
+        "RAM",
+        "DVD",
+        "USB-kábel"
+    ],
+    correct: 1
+},
+
+{
+    category: "informatika",
+    difficulty: "kozepes",
+    question: "Melyik eszköz kapcsolja össze a hálózatokat és továbbítja az adatcsomagokat?",
+    answers: [
+        "Router",
+        "Monitor",
+        "Billentyűzet",
+        "Nyomtató"
+    ],
+    correct: 0
+},
+
+{
+    category: "informatika",
+    difficulty: "kozepes",
+    question: "Melyik billentyűkombinációval lehet általában visszavonni az előző műveletet?",
+    answers: [
+        "Ctrl + A",
+        "Ctrl + S",
+        "Ctrl + Z",
+        "Ctrl + P"
+    ],
+    correct: 2
+},
 },
     },
 
