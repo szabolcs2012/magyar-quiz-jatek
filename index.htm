@@ -11,7 +11,40 @@
 <body>
 <!-- KATEGÓRIA VÁLASZTÁS -->
 <div id="category-screen" class="screen hidden">
+<!-- KATEGÓRIA VÁLASZTÁS -->
+<div id="category-screen" class="screen hidden">
+    <!-- ide jönnek a kategóriák -->
+    
+    <button onclick="startQuiz()">Kvíz indítása</button>
+</div>
 
+
+<!-- NEHÉZSÉG VÁLASZTÁS -->
+<div id="difficulty-screen" class="screen hidden">
+    <h1>🎯 Válassz nehézséget!</h1>
+
+    <p>Milyen nehézségű kérdéseket szeretnél?</p>
+
+    <div class="difficulty-buttons">
+        <button onclick="selectDifficulty('konnyu')">
+            🟢 Könnyű
+        </button>
+
+        <button onclick="selectDifficulty('kozepes')">
+            🟡 Közepes
+        </button>
+
+        <button onclick="selectDifficulty('nehez')">
+            🔴 Nehéz
+        </button>
+    </div>
+</div>
+
+
+<!-- KVÍZ -->
+<div id="quiz-screen" class="screen hidden">
+    <!-- kérdések -->
+</div>
     <h1>📚 Válassz kategóriát!</h1>
 
     <p>Válaszd ki, milyen témákból szeretnél kérdéseket.</p>
