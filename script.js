@@ -16,8 +16,10 @@ const questions = [
 
     // INFORMATIKA
     {
-        category: "informatika",
-        question: "Mit jelent a CPU rövidítés?",
+        {
+    category: "informatika",
+    difficulty: "konnyu",
+    question: "Mit jelent a CPU rövidítés?",
         answers: [
             "Central Processing Unit",
             "Computer Personal Unit",
