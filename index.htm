@@ -1,8 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Kvíz Játék</title>
 
     <link rel="stylesheet" href="style.css">
@@ -10,47 +13,74 @@
 
 <body>
 
-    <!-- KEZDŐKÉPERNYŐ -->
+    <!-- =========================
+         KEZDŐKÉPERNYŐ
+         ========================= -->
+
     <div id="start-screen" class="screen">
+
         <h1>🧠 Kvíz Játék</h1>
 
         <p>Add meg a neved!</p>
 
-<input 
-    type="text" 
-    id="player-name" 
-    placeholder="Írd be a neved..."
-    maxlength="20"
->
+        <input
+            type="text"
+            id="player-name"
+            placeholder="Írd be a neved..."
+            maxlength="20"
+        >
 
-<button onclick="startGame()">KEZDÉS</button>
+        <button onclick="startGame()">
+            🎮 KEZDÉS
+        </button>
 
-<button onclick="showLeaderboard()">
-    🏆 Leaderboard
-</button>
+        <button onclick="showLeaderboard()">
+            🏆 LEADERBOARD
+        </button>
+
     </div>
 
 
-    <!-- KÉRDÉSSZÁM VÁLASZTÁS -->
+    <!-- =========================
+         KÉRDÉSSZÁM VÁLASZTÁS
+         ========================= -->
+
     <div id="question-count-screen" class="screen hidden">
+
         <h1>Hány kérdést szeretnél?</h1>
 
         <p id="welcome-text"></p>
 
         <div class="question-buttons">
-            <button onclick="selectQuestionCount(30)">30 kérdés</button>
-            <button onclick="selectQuestionCount(60)">60 kérdés</button>
-            <button onclick="selectQuestionCount(120)">120 kérdés</button>
+
+            <button onclick="selectQuestionCount(30)">
+                30 kérdés
+            </button>
+
+            <button onclick="selectQuestionCount(60)">
+                60 kérdés
+            </button>
+
+            <button onclick="selectQuestionCount(120)">
+                120 kérdés
+            </button>
+
         </div>
+
     </div>
 
 
-    <!-- KATEGÓRIA VÁLASZTÁS -->
+    <!-- =========================
+         KATEGÓRIA VÁLASZTÁS
+         ========================= -->
+
     <div id="category-screen" class="screen hidden">
 
         <h1>📚 Válassz kategóriát!</h1>
 
-        <p>Válaszd ki, milyen témákból szeretnél kérdéseket.</p>
+        <p>
+            Válaszd ki, milyen témákból szeretnél kérdéseket.
+        </p>
 
         <div class="categories">
 
@@ -73,18 +103,23 @@
         </div>
 
         <button onclick="startQuiz()">
-            Kvíz indítása 🚀
+            🚀 Kvíz indítása
         </button>
 
     </div>
 
 
-    <!-- NEHÉZSÉG VÁLASZTÁS -->
+    <!-- =========================
+         NEHÉZSÉG VÁLASZTÁS
+         ========================= -->
+
     <div id="difficulty-screen" class="screen hidden">
 
         <h1>🎯 Válassz nehézséget!</h1>
 
-        <p>Milyen nehézségű kérdéseket szeretnél?</p>
+        <p>
+            Milyen nehézségű kérdéseket szeretnél?
+        </p>
 
         <div class="difficulty-buttons">
 
@@ -105,10 +140,15 @@
     </div>
 
 
-    <!-- KVÍZ KÉPERNYŐ -->
+    <!-- =========================
+         KVÍZ KÉPERNYŐ
+         ========================= -->
+
     <div id="quiz-screen" class="screen hidden">
 
-        <h2 id="question-number">1 / 30</h2>
+        <h2 id="question-number">
+            1 / 30
+        </h2>
 
         <h1 id="question-text">
             Kérdés helye
@@ -116,21 +156,62 @@
 
         <div id="answers">
 
-            <button>Válasz A</button>
-            <button>Válasz B</button>
-            <button>Válasz C</button>
-            <button>Válasz D</button>
+            <button>
+                Válasz A
+            </button>
+
+            <button>
+                Válasz B
+            </button>
+
+            <button>
+                Válasz C
+            </button>
+
+            <button>
+                Válasz D
+            </button>
 
         </div>
 
         <p id="score">
-            ✅ Helyes: 0 | ❌ Helytelen: 0
+            ✅ Helyes: 0 |
+            ❌ Helytelen: 0
         </p>
 
     </div>
 
 
+    <!-- =========================
+         LEADERBOARD
+         ========================= -->
+
+    <div id="leaderboard-screen" class="screen hidden">
+
+        <h1>🏆 Leaderboard</h1>
+
+        <p>
+            A már játszott játékosok eredményei
+        </p>
+
+        <div id="leaderboard-list">
+            <!-- A JavaScript tölti fel -->
+        </div>
+
+        <button onclick="backToStart()">
+            ⬅️ Vissza
+        </button>
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+         ========================= -->
+
     <script src="script.js"></script>
 
 </body>
+
 </html>
+```
