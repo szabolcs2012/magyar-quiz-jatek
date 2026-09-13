@@ -59,8 +59,10 @@ const questions = [
     },
 
     {
-        category: "foldrajz",
-        question: "Melyik a Föld legnagyobb óceánja?",
+        {
+    category: "foldrajz",
+    difficulty: "konnyu",
+    question: "Melyik a Föld legnagyobb óceánja?",
         answers: [
             "Atlanti-óceán",
             "Csendes-óceán",
