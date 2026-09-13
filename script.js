@@ -609,3 +609,16 @@ function saveComment() {
         );
     });
 }
+const questions = [
+   // ide jön mind a 120 kérdés
+];
+
+questions.forEach(function(question) {
+    const correctText = question.answers[question.correct];
+
+    question.answers.sort(function() {
+        return Math.random() - 0.5;
+    });
+
+    question.correct = question.answers.indexOf(correctText);
+});
