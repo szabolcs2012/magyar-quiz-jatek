@@ -198,6 +198,16 @@ function startQuiz() {
         return;
     }
 
+    // Kategória kiválasztva → megyünk a nehézséghez
+    document
+        .getElementById("category-screen")
+        .classList.add("hidden");
+
+    document
+        .getElementById("difficulty-screen")
+        .classList.remove("hidden");
+}
+
     // Csak a kiválasztott kategóriák kérdései
     const availableQuestions = questions.filter(question =>
         selectedCategories.includes(question.category)
