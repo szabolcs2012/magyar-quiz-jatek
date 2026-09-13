@@ -1537,6 +1537,135 @@ const questions = [
         "Diffúzió"
     ],
     correct: 1
+            {
+    category: "biologia",
+    difficulty: "nehez",
+    question: "Melyik sejtszervecske felelős a fehérjeszintézisért?",
+    answers: [
+        "Mitokondrium",
+        "Riboszóma",
+        "Sejtmag",
+        "Lizozóma"
+    ],
+    correct: 1
+},
+
+{
+    category: "biologia",
+    difficulty: "nehez",
+    question: "Melyik bázis található a DNS-ben, de az RNS-ben helyette uracil van?",
+    answers: [
+        "Adenin",
+        "Guanin",
+        "Timine",
+        "Citozin"
+    ],
+    correct: 2
+},
+
+{
+    category: "biologia",
+    difficulty: "nehez",
+    question: "Mi a mitózis eredménye egy emberi testi sejt esetében?",
+    answers: [
+        "Két genetikailag azonos leánysejt",
+        "Négy különböző sejt",
+        "Két haploid sejt",
+        "Egy új ivarsejt"
+    ],
+    correct: 0
+},
+
+{
+    category: "biologia",
+    difficulty: "nehez",
+    question: "Melyik vércsoportot nevezik általános vörösvérsejt-donornak?",
+    answers: [
+        "AB+",
+        "A+",
+        "O-",
+        "B-"
+    ],
+    correct: 2
+},
+
+{
+    category: "biologia",
+    difficulty: "nehez",
+    question: "Melyik hormon növeli a vércukorszintet?",
+    answers: [
+        "Inzulin",
+        "Glukagon",
+        "Melatonin",
+        "Ösztrogén"
+    ],
+    correct: 1
+},
+
+{
+    category: "biologia",
+    difficulty: "nehez",
+    question: "Melyik szervrendszerhez tartoznak a neuronok?",
+    answers: [
+        "Keringési rendszer",
+        "Emésztőrendszer",
+        "Idegrendszer",
+        "Hormonrendszer"
+    ],
+    correct: 2
+},
+
+{
+    category: "biologia",
+    difficulty: "nehez",
+    question: "Hol történik a sejtlégzés aerob szakaszának legfontosabb része?",
+    answers: [
+        "Sejtmagban",
+        "Mitokondriumban",
+        "Riboszómán",
+        "Sejtfalban"
+    ],
+    correct: 1
+},
+
+{
+    category: "biologia",
+    difficulty: "nehez",
+    question: "Melyik folyamat során keletkeznek haploid ivarsejtek?",
+    answers: [
+        "Mitózis",
+        "Meiózis",
+        "Fotoszintézis",
+        "Ozmózis"
+    ],
+    correct: 1
+},
+
+{
+    category: "biologia",
+    difficulty: "nehez",
+    question: "Melyik molekula szállítja az oxigént a vörösvérsejtekben?",
+    answers: [
+        "Kollagén",
+        "Hemoglobin",
+        "Inzulin",
+        "Keratin"
+    ],
+    correct: 1
+},
+
+{
+    category: "biologia",
+    difficulty: "nehez",
+    question: "Melyik szervezet képes saját szerves anyagát szervetlen anyagokból előállítani?",
+    answers: [
+        "Autotróf élőlény",
+        "Heterotróf élőlény",
+        "Parazita",
+        "Lebontó"
+    ],
+    correct: 0
+},
 },
 },
     }
