@@ -57,18 +57,28 @@ function toggleCategory(button, category) {
 }
 
 
-// Kvíz indítása
-function startQuiz() {
+// Kvíz indításaconst questions = [
+    {
+        category: "informatika",
+        question: "Mit jelent a CPU rövidítés?",
+        answers: [
+            "Central Processing Unit",
+            "Computer Personal Unit",
+            "Central Program Utility",
+            "Control Processing User"
+        ],
+        correct: 0
+    },
 
-    if (selectedCategories.length === 0) {
-        alert("Kérlek, válassz legalább egy kategóriát!");
-        return;
+    {
+        category: "foldrajz",
+        question: "Melyik Magyarország fővárosa?",
+        answers: [
+            "Debrecen",
+            "Szeged",
+            "Budapest",
+            "Pécs"
+        ],
+        correct: 2
     }
-
-    alert(
-        "Kezdődik a kvíz!\n\n" +
-        "Játékos: " + playerName + "\n" +
-        "Kérdések: " + questionCount + "\n" +
-        "Kategóriák: " + selectedCategories.join(", ")
-    );
-}
+];}
