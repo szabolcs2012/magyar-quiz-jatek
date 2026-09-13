@@ -16,10 +16,9 @@ const questions = [
 
     // INFORMATIKA
     {
-        {
-    category: "informatika",
-    difficulty: "konnyu",
-    question: "Mit jelent a CPU rövidítés?",
+        category: "informatika",
+        difficulty: "konnyu",
+        question: "Mit jelent a CPU rövidítés?",
         answers: [
             "Central Processing Unit",
             "Computer Personal Unit",
@@ -30,10 +29,9 @@ const questions = [
     },
 
     {
-       {
-    category: "informatika",
-    difficulty: "konnyu",
-    question: "Melyik eszköz használható adatok tárolására?",
+        category: "informatika",
+        difficulty: "konnyu",
+        question: "Melyik eszköz használható adatok tárolására?",
         answers: [
             "SSD",
             "Monitor",
@@ -45,10 +43,9 @@ const questions = [
 
     // FÖLDRAJZ
     {
-        {
-    category: "foldrajz",
-    difficulty: "konnyu",
-    question: "Mi Magyarország fővárosa?",
+        category: "foldrajz",
+        difficulty: "konnyu",
+        question: "Mi Magyarország fővárosa?",
         answers: [
             "Debrecen",
             "Szeged",
@@ -59,10 +56,9 @@ const questions = [
     },
 
     {
-        {
-    category: "foldrajz",
-    difficulty: "konnyu",
-    question: "Melyik a Föld legnagyobb óceánja?",
+        category: "foldrajz",
+        difficulty: "konnyu",
+        question: "Melyik a Föld legnagyobb óceánja?",
         answers: [
             "Atlanti-óceán",
             "Csendes-óceán",
@@ -74,10 +70,9 @@ const questions = [
 
     // TÖRTÉNELEM
     {
-        {
-    category: "tortenelem",
-    difficulty: "kozepes",
-    question: "Mikor volt a mohácsi csata?",
+        category: "tortenelem",
+        difficulty: "kozepes",
+        question: "Mikor volt a mohácsi csata?",
         answers: [
             "1456",
             "1526",
@@ -88,10 +83,9 @@ const questions = [
     },
 
     {
-        {
-    category: "tortenelem",
-    difficulty: "konnyu",
-    question: "Ki volt Magyarország első királya?",
+        category: "tortenelem",
+        difficulty: "konnyu",
+        question: "Ki volt Magyarország első királya?",
         answers: [
             "Mátyás király",
             "IV. Béla",
@@ -103,10 +97,9 @@ const questions = [
 
     // BIOLÓGIA
     {
-        {
-    category: "biologia",
-    difficulty: "konnyu",
-    question: "Melyik szerv pumpálja a vért?",
+        category: "biologia",
+        difficulty: "konnyu",
+        question: "Melyik szerv pumpálja a vért?",
         answers: [
             "Tüdő",
             "Szív",
@@ -117,10 +110,9 @@ const questions = [
     },
 
     {
-        {
-    category: "biologia",
-    difficulty: "konnyu",
-    question: "Hány lába van egy póknak?",
+        category: "biologia",
+        difficulty: "konnyu",
+        question: "Hány lába van egy póknak?",
         answers: [
             "6",
             "8",
@@ -202,15 +194,36 @@ function toggleCategory(button, category) {
 
 
 // =========================
-// KVÍZ INDÍTÁSA
+// KATEGÓRIA → NEHÉZSÉG
 // =========================
 
 function startQuiz() {
+
+    if (selectedCategories.length === 0) {
+
+        alert("Kérlek, válassz legalább egy kategóriát!");
+
+        return;
+    }
+
+    document
+        .getElementById("category-screen")
+        .classList.add("hidden");
+
+    document
+        .getElementById("difficulty-screen")
+        .classList.remove("hidden");
+}
+
+
+// =========================
+// NEHÉZSÉG → KVÍZ
+// =========================
+
 function selectDifficulty(difficulty) {
 
     selectedDifficulty = difficulty;
 
-    // Csak a kiválasztott kategória ÉS nehézség kérdései
     const availableQuestions = questions.filter(question =>
         selectedCategories.includes(question.category) &&
         question.difficulty === selectedDifficulty
@@ -246,62 +259,6 @@ function selectDifficulty(difficulty) {
 
     showQuestion();
 }
-    if (selectedCategories.length === 0) {
-
-        alert("Kérlek, válassz legalább egy kategóriát!");
-
-        return;
-    }
-
-    // Kategória kiválasztva → megyünk a nehézséghez
-    document
-        .getElementById("category-screen")
-        .classList.add("hidden");
-
-    document
-        .getElementById("difficulty-screen")
-        .classList.remove("hidden");
-}
-
-    // Csak a kiválasztott kategóriák kérdései
-    const availableQuestions = questions.filter(question =>
-        selectedCategories.includes(question.category)
-    );
-
-    if (availableQuestions.length === 0) {
-
-        alert("Ehhez a kategóriához még nincs kérdés!");
-
-        return;
-    }
-
-    // Ha például 30 kérdést választott,
-    // de csak 8 tesztkérdésünk van,
-    // most a rendelkezésre álló kérdéseket használjuk.
-    questionCount = Math.min(
-        questionCount,
-        availableQuestions.length
-    );
-
-    currentQuestionIndex = 0;
-    correctAnswers = 0;
-    wrongAnswers = 0;
-
-    // A kérdéseket eltesszük a játékhoz
-    window.gameQuestions = availableQuestions
-        .sort(() => Math.random() - 0.5)
-        .slice(0, questionCount);
-
-    document
-        .getElementById("category-screen")
-        .classList.add("hidden");
-
-    document
-        .getElementById("quiz-screen")
-        .classList.remove("hidden");
-
-    showQuestion();
-}
 
 
 // =========================
@@ -310,7 +267,8 @@ function selectDifficulty(difficulty) {
 
 function showQuestion() {
 
-    const question = window.gameQuestions[currentQuestionIndex];
+    const question =
+        window.gameQuestions[currentQuestionIndex];
 
     document.getElementById("question-number").textContent =
         (currentQuestionIndex + 1) + " / " + questionCount;
@@ -346,12 +304,12 @@ function showQuestion() {
 
 function checkAnswer(selectedAnswer) {
 
-    const question = window.gameQuestions[currentQuestionIndex];
+    const question =
+        window.gameQuestions[currentQuestionIndex];
 
     const buttons =
         document.querySelectorAll("#answers button");
 
-    // Ne lehessen többször kattintani
     buttons.forEach(button => {
         button.disabled = true;
     });
@@ -360,15 +318,18 @@ function checkAnswer(selectedAnswer) {
 
         correctAnswers++;
 
-        buttons[selectedAnswer].classList.add("correct");
+        buttons[selectedAnswer]
+            .classList.add("correct");
 
     } else {
 
         wrongAnswers++;
 
-        buttons[selectedAnswer].classList.add("wrong");
+        buttons[selectedAnswer]
+            .classList.add("wrong");
 
-        buttons[question.correct].classList.add("correct");
+        buttons[question.correct]
+            .classList.add("correct");
     }
 
     updateScore();
