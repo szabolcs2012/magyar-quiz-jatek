@@ -854,6 +854,135 @@ const questions = [
             "1956"
         ],
         correct: 1
+        {
+    category: "tortenelem",
+    difficulty: "kozepes",
+    question: "Melyik évben adták ki az Aranybullát?",
+    answers: [
+        "1222",
+        "1241",
+        "1301",
+        "1456"
+    ],
+    correct: 0
+},
+
+{
+    category: "tortenelem",
+    difficulty: "kozepes",
+    question: "Ki volt a tatárjárás idején Magyarország királya?",
+    answers: [
+        "II. András",
+        "IV. Béla",
+        "I. Károly",
+        "Mátyás király"
+    ],
+    correct: 1
+},
+
+{
+    category: "tortenelem",
+    difficulty: "kozepes",
+    question: "Melyik magyar király nevéhez fűződik a fekete sereg?",
+    answers: [
+        "Szent István",
+        "IV. Béla",
+        "Hunyadi Mátyás",
+        "Könyves Kálmán"
+    ],
+    correct: 2
+},
+
+{
+    category: "tortenelem",
+    difficulty: "kozepes",
+    question: "Mikor volt a nándorfehérvári diadal?",
+    answers: [
+        "1241",
+        "1456",
+        "1526",
+        "1541"
+    ],
+    correct: 1
+},
+
+{
+    category: "tortenelem",
+    difficulty: "kozepes",
+    question: "Ki vezette a szabadságharc egyik jelentős seregét 1849-ben?",
+    answers: [
+        "Görgei Artúr",
+        "Deák Ferenc",
+        "Batthyány Lajos",
+        "Ady Endre"
+    ],
+    correct: 0
+},
+
+{
+    category: "tortenelem",
+    difficulty: "kozepes",
+    question: "Melyik esemény történt 1956. október 23-án?",
+    answers: [
+        "A honfoglalás",
+        "A forradalom és szabadságharc kezdete",
+        "A mohácsi csata",
+        "A kiegyezés"
+    ],
+    correct: 1
+},
+
+{
+    category: "tortenelem",
+    difficulty: "kozepes",
+    question: "Melyik évben született meg a kiegyezés Ausztria és Magyarország között?",
+    answers: [
+        "1848",
+        "1867",
+        "1918",
+        "1920"
+    ],
+    correct: 1
+},
+
+{
+    category: "tortenelem",
+    difficulty: "kozepes",
+    question: "Ki volt az első magyar miniszterelnök 1848-ban?",
+    answers: [
+        "Kossuth Lajos",
+        "Batthyány Lajos",
+        "Széchenyi István",
+        "Görgei Artúr"
+    ],
+    correct: 1
+},
+
+{
+    category: "tortenelem",
+    difficulty: "kozepes",
+    question: "Melyik évben írták alá a trianoni békeszerződést?",
+    answers: [
+        "1918",
+        "1919",
+        "1920",
+        "1921"
+    ],
+    correct: 2
+},
+
+{
+    category: "tortenelem",
+    difficulty: "kozepes",
+    question: "Melyik eseményhez kapcsolódik II. Rákóczi Ferenc neve?",
+    answers: [
+        "Rákóczi-szabadságharc",
+        "1848-as forradalom",
+        "Honfoglalás",
+        "Török kiűzése"
+    ],
+    correct: 0
+},
     },
 
     {
