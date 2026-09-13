@@ -453,6 +453,135 @@ const questions = [
             "Jeges-tenger"
         ],
         correct: 1
+        {
+    category: "foldrajz",
+    difficulty: "konnyu",
+    question: "Melyik kontinensen található Magyarország?",
+    answers: [
+        "Ázsia",
+        "Európa",
+        "Afrika",
+        "Dél-Amerika"
+    ],
+    correct: 1
+},
+
+{
+    category: "foldrajz",
+    difficulty: "konnyu",
+    question: "Melyik ország fővárosa Bécs?",
+    answers: [
+        "Ausztria",
+        "Svájc",
+        "Németország",
+        "Belgium"
+    ],
+    correct: 0
+},
+
+{
+    category: "foldrajz",
+    difficulty: "konnyu",
+    question: "Melyik a Föld legmagasabb hegye?",
+    answers: [
+        "K2",
+        "Mount Everest",
+        "Mont Blanc",
+        "Kilimandzsáró"
+    ],
+    correct: 1
+},
+
+{
+    category: "foldrajz",
+    difficulty: "konnyu",
+    question: "Melyik tenger található Magyarországhoz legközelebb?",
+    answers: [
+        "Fekete-tenger",
+        "Adriai-tenger",
+        "Balti-tenger",
+        "Északi-tenger"
+    ],
+    correct: 1
+},
+
+{
+    category: "foldrajz",
+    difficulty: "konnyu",
+    question: "Melyik folyó folyik át Budapesten?",
+    answers: [
+        "Tisza",
+        "Duna",
+        "Dráva",
+        "Rába"
+    ],
+    correct: 1
+},
+
+{
+    category: "foldrajz",
+    difficulty: "konnyu",
+    question: "Melyik országban található Párizs?",
+    answers: [
+        "Olaszország",
+        "Spanyolország",
+        "Franciaország",
+        "Portugália"
+    ],
+    correct: 2
+},
+
+{
+    category: "foldrajz",
+    difficulty: "konnyu",
+    question: "Melyik a legkisebb kontinens?",
+    answers: [
+        "Európa",
+        "Ausztrália",
+        "Afrika",
+        "Antarktisz"
+    ],
+    correct: 1
+},
+
+{
+    category: "foldrajz",
+    difficulty: "konnyu",
+    question: "Melyik ország híres a piramisairól?",
+    answers: [
+        "Egyiptom",
+        "India",
+        "Kanada",
+        "Norvégia"
+    ],
+    correct: 0
+},
+
+{
+    category: "foldrajz",
+    difficulty: "konnyu",
+    question: "Melyik égtáj irányába nyugszik le a Nap?",
+    answers: [
+        "Észak",
+        "Kelet",
+        "Dél",
+        "Nyugat"
+    ],
+    correct: 3
+},
+
+{
+    category: "foldrajz",
+    difficulty: "konnyu",
+    question: "Melyik országban található Róma?",
+    answers: [
+        "Görögország",
+        "Olaszország",
+        "Spanyolország",
+        "Horvátország"
+    ],
+    correct: 1
+},
     },
 
     // TÖRTÉNELEM
