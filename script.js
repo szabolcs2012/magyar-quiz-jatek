@@ -1409,6 +1409,135 @@ const questions = [
         "K-vitamin"
     ],
     correct: 2
+            {
+    category: "biologia",
+    difficulty: "kozepes",
+    question: "Melyik sejtalkotó felelős főként a sejt energiatermeléséért?",
+    answers: [
+        "Sejtmag",
+        "Mitokondrium",
+        "Riboszóma",
+        "Sejtfal"
+    ],
+    correct: 1
+},
+
+{
+    category: "biologia",
+    difficulty: "kozepes",
+    question: "Melyik vérsejtek felelősek elsősorban az oxigén szállításáért?",
+    answers: [
+        "Vörösvérsejtek",
+        "Fehérvérsejtek",
+        "Vérlemezkék",
+        "Őssejtek"
+    ],
+    correct: 0
+},
+
+{
+    category: "biologia",
+    difficulty: "kozepes",
+    question: "Melyik hormon szabályozza a vércukorszint csökkentését?",
+    answers: [
+        "Adrenalin",
+        "Inzulin",
+        "Tesztoszteron",
+        "Tiroxin"
+    ],
+    correct: 1
+},
+
+{
+    category: "biologia",
+    difficulty: "kozepes",
+    question: "Melyik szerv termeli az epét?",
+    answers: [
+        "Hasnyálmirigy",
+        "Gyomor",
+        "Máj",
+        "Vese"
+    ],
+    correct: 2
+},
+
+{
+    category: "biologia",
+    difficulty: "kozepes",
+    question: "Mi a DNS fő feladata?",
+    answers: [
+        "Energia előállítása",
+        "Genetikai információ tárolása",
+        "Vér szállítása",
+        "Emésztés"
+    ],
+    correct: 1
+},
+
+{
+    category: "biologia",
+    difficulty: "kozepes",
+    question: "Melyik szervrendszerhez tartozik a gyomor és a vékonybél?",
+    answers: [
+        "Légzőrendszer",
+        "Emésztőrendszer",
+        "Idegrendszer",
+        "Keringési rendszer"
+    ],
+    correct: 1
+},
+
+{
+    category: "biologia",
+    difficulty: "kozepes",
+    question: "Melyik állatcsoportba tartozik a béka?",
+    answers: [
+        "Hüllők",
+        "Kétéltűek",
+        "Emlősök",
+        "Madarak"
+    ],
+    correct: 1
+},
+
+{
+    category: "biologia",
+    difficulty: "kozepes",
+    question: "Melyik sejtszervecske tartalmazza az örökítőanyag nagy részét az emberi sejtekben?",
+    answers: [
+        "Sejtmag",
+        "Mitokondrium",
+        "Riboszóma",
+        "Lizozóma"
+    ],
+    correct: 0
+},
+
+{
+    category: "biologia",
+    difficulty: "kozepes",
+    question: "Melyik szerv felelős főként a vér szűréséért?",
+    answers: [
+        "Vese",
+        "Szív",
+        "Tüdő",
+        "Gyomor"
+    ],
+    correct: 0
+},
+
+{
+    category: "biologia",
+    difficulty: "kozepes",
+    question: "Melyik folyamat során készít a növény szerves anyagot fényenergia segítségével?",
+    answers: [
+        "Erjedés",
+        "Fotoszintézis",
+        "Párologtatás",
+        "Diffúzió"
+    ],
+    correct: 1
+},
 },
     }
 
